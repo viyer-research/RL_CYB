@@ -1,0 +1,947 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\geometry{margin=1in}
+
+\title{Comparative Analysis of Reinforcement Learning Algorithms for Autonomous Blue Team Defense in CybORG}
+
+\author{
+Research Study on CybORG Blue Agent Training\\
+Vasanth Iyer
+\\
+\textit{Based on the CybORG Framework}\\
+\textit{Standen et al., IJCAI-21 1st International Workshop on Adaptive Cyber Defense}
+}
+
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This study presents a comprehensive comparison of multiple reinforcement learning algorithms for training autonomous Blue team (defender) agents in the CybORG (Cyber Operations Research Gym) environment. We evaluate Proximal Policy Optimization (PPO), Long Short-Term Memory PPO (LSTM-PPO), and Deep Q-Network (DQN) approaches on Scenario~1b with a hierarchical action space. Our experiments reveal that DQN significantly outperforms policy gradient methods in learning state-dependent defensive strategies, achieving 39 action changes per episode compared to 0 for PPO-based methods on the baseline scenario. We then scale the problem to a \textbf{3$\times$ configuration} (20~hosts, 5~subnets, 120~actions, 3~Red agent profiles) and demonstrate that DQN achieves 2.1$\times$ improvement over a random baseline (mean reward $-228.4$ vs $-485.2$), learning a proactive Patch-then-Restore strategy focused on critical operational infrastructure. Finally, we bridge simulation and real-world threat intelligence by exporting episode data as STIX~2.1 bundles with MITRE ATT\&CK technique mappings, enabling direct comparison with operational CTI feeds.
+\end{abstract}
+
+\section{Introduction}
+
+Autonomous Cyber Operations (ACO) represents a critical challenge in modern cybersecurity, requiring intelligent agents capable of defending computer networks against sophisticated adversaries. The CybORG framework \cite{standen2021cyborg} provides a standardized environment for developing and evaluating such agents through both simulation and emulation modes.
+
+This work focuses on training Blue team (defender) agents in CybORG's Scenario~1b and an extended 3$\times$ scenario. We investigate multiple reinforcement learning approaches, scale the environment from 13 to 20 hosts with an expanded action space, and develop a STIX~2.1 export pipeline to connect simulation outcomes with real-world threat intelligence standards.
+
+\subsection{Problem Statement}
+
+The primary challenge identified during this research was \textbf{action collapse} - where trained agents converge to repeatedly selecting a single action regardless of the environment state. This phenomenon was observed across multiple algorithm configurations and represents a significant barrier to developing effective autonomous defenders.
+
+\subsection{Contributions}
+
+\begin{itemize}
+    \item Comprehensive comparison of PPO, LSTM-PPO, and DQN for Blue team training on the baseline 1$\times$ scenario
+    \item Identification of the action collapse problem in policy gradient methods
+    \item Demonstration that DQN learns genuine state-dependent policies
+    \item Hierarchical action space design reducing complexity from 54 to 52 actions
+    \item \textbf{3$\times$ scaling}: Extension to 20 hosts, 5 subnets, 120 actions (6 types including Isolate and Patch), and 3 Red agent profiles (B\_lineAgent, RedMeanderAgent, Sleep)
+    \item \textbf{STIX~2.1 integration}: Automated export of simulation episodes as STIX bundles with MITRE ATT\&CK technique mappings (T1018, T1046, T1210, TA0004, T1489) and ATT\&CK Navigator layer generation
+    \item Detailed analysis of learned defensive strategies at both scales
+\end{itemize}
+
+\section{Background}
+
+\subsection{CybORG Framework}
+
+CybORG \cite{standen2021cyborg} is a gym for Autonomous Cyber Operations research featuring:
+
+\begin{itemize}
+    \item \textbf{Simulation Mode}: Finite state machine representation for rapid training
+    \item \textbf{Emulation Mode}: AWS-based virtual infrastructure for validation
+    \item \textbf{OpenAI Gym Interface}: Standard RL interaction protocol
+    \item \textbf{Adversarial Scenarios}: Red vs Blue team competitions
+\end{itemize}
+
+The original CybORG paper demonstrated successful training of Red team agents using Deep Q-Networks with LSTM (DRQN), achieving a 66\% transfer rate from simulation to emulation. Our work extends this to Blue team defense.
+
+\subsection{Scenario 1b Configuration}
+
+\begin{table}[H]
+\centering
+\caption{Scenario 1b Network Configuration}
+\begin{tabular}{lll}
+\toprule
+\textbf{Subnet} & \textbf{Hosts} & \textbf{Role} \\
+\midrule
+User Subnet & User0, User1, User2, User3, User4 & Entry points \\
+Enterprise Subnet & Enterprise0, Enterprise1, Enterprise2 & Mid-tier targets \\
+Operational Subnet & Op\_Host0, Op\_Host1, Op\_Host2, Op\_Server0 & Critical assets \\
+Defense & Defender & Blue team base \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Action Space}
+
+Blue team agents have access to the following action types:
+
+\begin{table}[H]
+\centering
+\caption{Blue Team Action Types}
+\begin{tabular}{lp{8cm}}
+\toprule
+\textbf{Action} & \textbf{Description} \\
+\midrule
+Sleep & No operation \\
+Monitor & Network-wide surveillance for threats \\
+Analyse $\langle$host$\rangle$ & Detailed inspection of specific host \\
+Remove $\langle$host$\rangle$ & Remove malicious processes/files \\
+Restore $\langle$host$\rangle$ & Full system restore (expensive) \\
+Misinform $\langle$host$\rangle$ & Deploy deception/honeypots \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Red Team: B\_lineAgent}
+
+The B\_lineAgent follows a deterministic attack pattern:
+\begin{enumerate}
+    \item Discover subnet via scanning
+    \item Exploit User subnet hosts
+    \item Pivot to Enterprise subnet
+    \item Escalate privileges toward Op\_Server0
+\end{enumerate}
+
+This predictable sequence should theoretically enable Blue agents to learn anticipatory defenses.
+
+\subsection{3$\times$ Scaled Scenario}
+
+To evaluate scalability, we designed an extended scenario with 3$\times$ the network complexity:
+
+\begin{table}[H]
+\centering
+\caption{3$\times$ Scenario Network Configuration (20 Hosts, 5 Subnets)}
+\label{tab:3x_network}
+\begin{tabular}{llcl}
+\toprule
+\textbf{Subnet} & \textbf{Hosts} & \textbf{Count} & \textbf{Role} \\
+\midrule
+User & User0--User6 & 7 & Entry points (Windows/Linux mix) \\
+Enterprise & Enterprise0--2, Defender & 4 & Mid-tier servers, monitoring \\
+Operational & Op\_Host0--2, Op\_Server0 & 4 & Critical OT infrastructure \\
+DMZ & DMZ\_Server0--1 & 2 & Public-facing services \\
+Research & Research0--2 & 3 & Research workstations \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Network access control lists (NACLs) enforce segmentation: User$\to$Operational and DMZ$\to$Operational inbound traffic is blocked, as is User$\to$Research and DMZ$\to$Research. The Red agent starts with SYSTEM access on User0.
+
+\subsubsection{Extended Action Space}
+
+The 3$\times$ action space extends the baseline with two new meta-actions:
+
+\begin{table}[H]
+\centering
+\caption{3$\times$ Blue Team Action Space (6 Types $\times$ 20 Hosts = 120 Actions)}
+\begin{tabular}{lp{7.5cm}}
+\toprule
+\textbf{Action} & \textbf{Description} \\
+\midrule
+Monitor & Network-wide surveillance (applied to all hosts) \\
+Analyse $\langle$host$\rangle$ & Deep host inspection for compromise indicators \\
+Remove $\langle$host$\rangle$ & Kill malicious processes and remove sessions \\
+Restore $\langle$host$\rangle$ & Full system restore to clean state \\
+\textbf{Isolate} $\langle$host$\rangle$ & Network segmentation (M1030) --- block lateral movement \\
+\textbf{Patch} $\langle$host$\rangle$ & Vulnerability management (M1051) --- proactive hardening \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Multiple Red Agent Profiles}
+
+The 3$\times$ scenario randomises Red agent selection per episode:
+
+\begin{itemize}
+    \item \textbf{B\_lineAgent}: Deterministic 15-step kill chain (User0 $\to$ User1 $\to$ Enterprise1 $\to$ Enterprise2 $\to$ Op\_Server0 $\to$ Impact)
+    \item \textbf{RedMeanderAgent}: Adaptive opportunistic attacker scanning all reachable subnets
+    \item \textbf{Sleep}: No-op baseline modelling periods of no adversary activity
+\end{itemize}
+
+\subsubsection{Observation Space}
+
+The 3$\times$ observation vector has 121 dimensions:
+\begin{equation}
+    \mathbf{o} = [\underbrace{o_0^{(1)}, \ldots, o_0^{(6)}}_{\text{Host 0}}, \ldots, \underbrace{o_{19}^{(1)}, \ldots, o_{19}^{(6)}}_{\text{Host 19}}, \underbrace{d}_{\text{delay}}] \in \mathbb{R}^{121}
+\end{equation}
+where each host has 6 features: \{scan\_activity, exploit\_activity, compromised\_unknown, compromised\_level, isolated, patched\}, and $d \in \{0,1\}$ is a 1-step observation delay indicator for partial observability.
+
+\section{Methodology}
+
+\subsection{Hierarchical Action Space}
+
+To reduce action space complexity, we implemented a hierarchical encoding:
+
+\begin{equation}
+    a = t \times |H| + h
+\end{equation}
+
+where $t \in \{0,1,2,3\}$ represents action type (Monitor, Analyse, Remove, Restore), $h \in \{0,...,12\}$ represents host index, and $|H| = 13$ is the number of hosts.
+
+This reduces the action space from 54 discrete actions to 52 ($4 \times 13$), removing Sleep and Misinform.
+
+\subsection{Algorithms Evaluated}
+
+\subsubsection{Proximal Policy Optimization (PPO)}
+
+PPO \cite{schulman2017proximal} is a policy gradient method that optimizes:
+
+\begin{equation}
+    L^{CLIP}(\theta) = \mathbb{E}_t \left[ \min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t) \right]
+\end{equation}
+
+\textbf{Configuration:}
+\begin{itemize}
+    \item Learning rate: $3 \times 10^{-4}$
+    \item Entropy coefficient: 0.05
+    \item Network: MLP [256, 256]
+    \item Training steps: 500,000
+\end{itemize}
+
+\subsubsection{LSTM-PPO (Recurrent PPO)}
+
+RecurrentPPO extends PPO with LSTM memory to capture temporal patterns:
+
+\textbf{Configuration:}
+\begin{itemize}
+    \item LSTM hidden size: 128
+    \item LSTM layers: 1
+    \item Shared LSTM for policy and value
+    \item Entropy coefficient: 0.01
+    \item Training steps: 500,000
+\end{itemize}
+
+\subsubsection{Deep Q-Network (DQN)}
+
+DQN \cite{mnih2015human} learns action-value function $Q(s,a)$ directly:
+
+\begin{equation}
+    Q(s,a) = r + \gamma \max_{a'} Q(s', a')
+\end{equation}
+
+\textbf{Configuration:}
+\begin{itemize}
+    \item Learning rate: $1 \times 10^{-4}$
+    \item Replay buffer: 100,000 transitions
+    \item Exploration: $\epsilon$ from 1.0 to 0.05 over 30\% of training
+    \item Network: MLP [256, 256, 128]
+    \item Target update interval: 1,000 steps
+    \item Training steps: 500,000
+\end{itemize}
+
+\subsubsection{3$\times$ DQN Configuration}
+
+For the 3$\times$ scenario, DQN was scaled with a larger network and buffer:
+
+\textbf{Configuration:}
+\begin{itemize}
+    \item Learning rate: $1 \times 10^{-4}$
+    \item Replay buffer: 200,000 transitions
+    \item Batch size: 128
+    \item Exploration: $\epsilon$ from 1.0 to 0.05 over 100\% of training
+    \item Network: MLP [512, 256, 128]
+    \item Target update interval: 1,000 steps
+    \item Training steps: 750,000
+    \item GPU: NVIDIA RTX 5090 (CUDA 12.8), throughput $\approx$308~FPS
+    \item Training time: $\approx$40 minutes
+\end{itemize}
+
+\subsection{Evaluation Metrics}
+
+\begin{itemize}
+    \item \textbf{Mean Reward}: Average episode return (native CybORG reward)
+    \item \textbf{Unique Actions}: Number of distinct actions per episode
+    \item \textbf{Top Action \%}: Percentage of most common action
+    \item \textbf{Action Changes}: Number of times action changes within episode
+    \item \textbf{Deterministic vs Stochastic}: Comparing $\arg\max$ vs sampled action selection
+\end{itemize}
+
+\section{Results}
+
+\subsection{Overall Performance Comparison}
+
+\begin{table}[H]
+\centering
+\caption{Deterministic Evaluation Results}
+\label{tab:main_results}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Algorithm} & \textbf{Mean Reward} & \textbf{Unique Actions} & \textbf{Top Action \%} & \textbf{State-Dependent} \\
+\midrule
+PPO (Flat) & -20.0 & 1 & 100.0\% & No \\
+PPO (Hierarchical) & -291.4 & 1 & 100.0\% & No \\
+LSTM-PPO & -1115.8 & 1 & 100.0\% & No \\
+\textbf{DQN} & \textbf{-228.1} & \textbf{6} & \textbf{56.7\%} & \textbf{Yes} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Stochastic vs Deterministic Performance}
+
+\begin{table}[H]
+\centering
+\caption{PPO Hierarchical: Stochastic vs Deterministic}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Metric} & \textbf{Deterministic} & \textbf{Stochastic} \\
+\midrule
+Mean Reward & -291.4 & -163.5 \\
+Unique Actions/Episode & 1.0 & 26.8 \\
+Total Unique Actions & 1 & 39 \\
+Most Common Action \% & 100.0\% & 26.1\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This reveals that PPO learns a \textbf{flat probability distribution} - stochastic sampling shows diversity, but deterministic $\arg\max$ collapses to a single action.
+
+\subsection{Action Type Distribution}
+
+\begin{table}[H]
+\centering
+\caption{Action Type Usage (Deterministic Mode)}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Algorithm} & \textbf{Monitor} & \textbf{Analyse} & \textbf{Remove} & \textbf{Restore} \\
+\midrule
+PPO Flat & 0\% & 0\% & 0\% & 100\% \\
+PPO Hierarchical & 0\% & 0\% & 0\% & 100\% \\
+LSTM-PPO & 0\% & 100\% & 0\% & 0\% \\
+\textbf{DQN} & \textbf{2.0\%} & \textbf{74.8\%} & \textbf{7.9\%} & \textbf{15.3\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+DQN is the only algorithm utilizing multiple action types, with a preference for Analyse operations.
+
+\subsection{Training Dynamics (1$\times$)}
+
+Figure~\ref{fig:training_1x} presents the training dynamics across all three algorithms, extracted from TensorBoard logs.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{training_1x_comparison.png}
+\caption{1$\times$ Scenario training comparison. (a)~Training loss on log scale: LSTM-PPO exhibits extreme loss spikes ($>$15,000) indicating training instability, while DQN converges steadily below 4.0. (b)~Exploration behaviour: PPO and LSTM-PPO rely on entropy regularisation (both plateau near $\sim$3.5--3.9), while DQN uses $\epsilon$-greedy decay from 1.0 to 0.05 over 150K steps. (c)~PPO action type distribution remains near-uniform ($\sim$25\% each), confirming the action collapse diagnosis---the policy never commits to any action type.}
+\label{fig:training_1x}
+\end{figure}
+
+The training curves confirm why DQN succeeds where PPO fails: DQN's loss converges smoothly to $\sim$1.0 while its $\epsilon$-greedy schedule provides structured exploration followed by decisive exploitation. PPO's entropy remains high throughout, preventing the policy from specialising.
+
+\subsection{State-Dependency Analysis}
+
+\begin{table}[H]
+\centering
+\caption{Action Changes per 50-Step Episode}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Algorithm} & \textbf{Action Changes} & \textbf{Classification} \\
+\midrule
+PPO Flat & 0 & Static \\
+PPO Hierarchical & 0 & Static \\
+LSTM-PPO & 0 & Static \\
+\textbf{DQN} & \textbf{39} & \textbf{State-Dependent} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{DQN Learned Policy}
+
+Analysis of Q-values reveals DQN learned meaningful preferences:
+
+\begin{table}[H]
+\centering
+\caption{DQN Q-Values by Action Type (Initial State)}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Action Type} & \textbf{Mean Q} & \textbf{Max Q} & \textbf{Min Q} \\
+\midrule
+Monitor & -2.97 & -2.77 & -3.59 \\
+Analyse & -2.92 & -2.79 & -3.30 \\
+Remove & -2.95 & -2.81 & -3.30 \\
+Restore & -3.91 & -3.60 & -4.39 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Key insight: DQN learned to \textbf{avoid Restore} (lowest Q-values) and prefer Analyse/Remove/Monitor.
+
+\subsubsection{Learned Defense Cycle}
+
+DQN learned a repeating defensive pattern:
+
+\begin{enumerate}
+    \item \textbf{Step 0}: Monitor (reconnaissance)
+    \item \textbf{Steps 1-2}: Analyse Op\_Server0 (check critical server)
+    \item \textbf{Step 3}: Remove Enterprise1 (clean compromised host)
+    \item \textbf{Steps 4+}: Alternate between Analyse and Remove
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{DQN Top 6 Actions (Deterministic Evaluation)}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Action} & \textbf{Count} & \textbf{Percentage} \\
+\midrule
+Analyse Op\_Server0 & 567 & 56.7\% \\
+Analyse Op\_Host0 & 156 & 15.6\% \\
+Restore Op\_Server0 & 153 & 15.3\% \\
+Remove Enterprise1 & 79 & 7.9\% \\
+Analyse User0 & 25 & 2.5\% \\
+Monitor & 20 & 2.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{3$\times$ Scaled Scenario Results}
+
+The 3$\times$ DQN agent was evaluated with 10 episodes per Red agent (deterministic policy) and compared against a random-action baseline.
+
+\subsubsection{DQN vs Random Baseline}
+
+\begin{table}[H]
+\centering
+\caption{3$\times$ DQN vs Random Baseline (10 episodes per Red agent)}
+\label{tab:3x_results}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Red Agent} & \textbf{DQN} & \textbf{Random} & \textbf{Improvement} \\
+\midrule
+Meander (adaptive) & $-319.1 \pm 23.5$ & $-610.6 \pm 183.4$ & $+291.6$ \\
+B\_line (targeted APT) & $-278.8 \pm 4.2$ & $-836.4 \pm 389.5$ & $+557.6$ \\
+Sleep (no-op) & $-87.5 \pm 0.0$ & $-8.7 \pm 0.7$ & $-78.8$ \\
+\midrule
+\textbf{Overall} & $\mathbf{-228.4}$ & $\mathbf{-485.2}$ & $\mathbf{+256.8}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The DQN agent achieves a $2.1\times$ improvement over random against active adversaries. Against Sleep (no adversary), the DQN agent scores worse than random because its proactive Restore strategy incurs unnecessary availability costs when no threat is present---an expected trade-off for a defensive posture.
+
+\subsubsection{Learned 3$\times$ Policy}
+
+The 3$\times$ DQN learned a \textbf{Patch-then-Restore} strategy:
+
+\begin{enumerate}
+    \item \textbf{Steps 0--10}: Proactively patch 5 gateway/critical hosts across all subnets (Op\_Host1 $\to$ Research0 $\to$ Enterprise0 $\to$ User1 $\to$ DMZ\_Server0)
+    \item \textbf{Steps 10--100}: Continuously Restore Op\_Server0 (the critical OT server)
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{3$\times$ DQN Action Distribution}
+\begin{tabular}{lccccccc}
+\toprule
+ & \textbf{Monitor} & \textbf{Analyse} & \textbf{Remove} & \textbf{Restore} & \textbf{Isolate} & \textbf{Patch} \\
+\midrule
+3$\times$ DQN & 0\% & 0\% & 0\% & 90\% & 0\% & 10\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{3$\times$ DQN Subnet Targeting}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Subnet} & \textbf{Percentage} & \textbf{Rationale} \\
+\midrule
+Operational & 92\% & Protect critical OT server (Op\_Server0) \\
+User & 2\% & Patch entry point (User1) \\
+Enterprise & 2\% & Patch gateway (Enterprise0) \\
+DMZ & 2\% & Patch public-facing server \\
+Research & 2\% & Patch research workstation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Training Dynamics (3$\times$)}
+
+Figure~\ref{fig:training_3x} shows the full training progression of the 3$\times$ DQN agent over 750K steps.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{training_3x_curves.png}
+\caption{3$\times$ DQN training progress (750K steps, RTX 5090 at $\sim$308 FPS). (a)~Overall eval reward improves from $-667$ to $-229$, with high variance in early training due to random Red agent selection. (b)~Per-Red reward: B\_line (blue) and Meander (red) converge to $\sim\!-280$ and $\sim\!-320$ respectively, while Sleep (grey) stabilises at $-88$. (c)~Training loss converges from $\sim$2.5 to $\sim$1.0. (d)~Action distribution shows a dramatic policy shift: early training explores all 6 types (Monitor, Analyse, Remove dominate initially), but by 300K steps the policy converges to Restore (90\%) + Patch (10\%). (e)~$\epsilon$-greedy exploration decays linearly over the full training horizon. (f)~The number of hosts patched per episode stabilises at 5, with 6--7 unique actions used.}
+\label{fig:training_3x}
+\end{figure}
+
+The action distribution panel (d) is particularly revealing: the agent experiments broadly with all 6 action types during the first 200K steps, then rapidly converges to the Patch$\to$Restore strategy once it discovers that proactive patching of gateway hosts combined with continuous restoration of Op\_Server0 maximises long-term reward across all three Red agent profiles.
+
+\subsubsection{Q-Value Analysis (3$\times$)}
+
+\begin{table}[H]
+\centering
+\caption{3$\times$ DQN Q-Values by Action Type (Initial State, vs Meander)}
+\label{tab:3x_qvalues}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Action Type} & \textbf{Mean Q} & \textbf{Max Q} & \textbf{Min Q} \\
+\midrule
+Monitor & 0.07 & 0.32 & $-0.70$ \\
+Analyse & 0.14 & 0.35 & $-0.22$ \\
+Remove & 0.14 & 0.45 & $-0.33$ \\
+Restore & $-0.27$ & 0.09 & $-0.75$ \\
+Isolate & $-0.01$ & 0.12 & $-0.15$ \\
+\textbf{Patch} & \textbf{0.40} & \textbf{0.58} & \textbf{0.10} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The highest Q-value action is \textbf{Patch Op\_Host1} ($Q = 0.58$), the gateway to the Operational subnet. The agent strongly values proactive patching over reactive restoration at the initial state, switching to Restore once vulnerabilities are patched.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{stix_export/q_values_patch_restore.png}
+\caption{Per-host Q-values for \texttt{Patch} (top) and \texttt{Restore} (bottom) at the initial state. The agent assigns highest value to patching gateway/workstation hosts (e.g. \texttt{Op\_Host1}) while \texttt{Restore} is preferred empirically for the critical \texttt{Op\_Server0}.}
+\label{fig:q_values_patch_restore}
+\end{figure}
+
+\subsubsection{State-Dependency (3$\times$)}
+
+The 3$\times$ policy exhibits 5 action changes per 50 steps, classified as \textbf{mostly static}. Unlike the 1$\times$ DQN which achieved 39 changes, the 3$\times$ agent follows a fixed playbook: patch 5~hosts across subnets, then loop Restore on Op\_Server0. This suggests the larger action space led to a more deterministic defensive posture, trading reactivity for reliability.
+\paragraph{Interpreting the learned strategy.} The DQN converged on a proactive vulnerability-management playbook: it assigns the highest action-value to \texttt{Patch} (mean $\bar{Q}_{\rm Patch}\approx0.397$) and uses \texttt{Restore} as a persistent recovery loop on the critical OT server (mean $\bar{Q}_{\rm Restore}\approx-0.274$). Empirically the policy patches ~5 hosts per episode and repeatedly restores \texttt{Op\_Server0} (Restore selected in ~90\% of executed steps) while \texttt{Patch Op\_Host1} has the single highest initial $Q$ ($Q\approx0.575$). These behaviours are visible in the training curves (Figure~\ref{fig:training_3x}), the per-episode ATT\&CK Navigator exports (\texttt{cyborg\_3x\_episode\_meander\_20260215\_142036\_4.5.json}, \texttt{cyborg\_3x\_episode\_bline\_20260215\_142036\_4.5.json}) and the per-host Q-value heatmap (\texttt{q\_values\_patch\_restore.png}).
+\subsection{1$\times$ vs 3$\times$ Comparison}
+
+\begin{table}[H]
+\centering
+\caption{Scaling Comparison: 1$\times$ Baseline vs 3$\times$ Extended}
+\label{tab:scaling_comparison}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Dimension} & \textbf{1$\times$ (Scenario 1b)} & \textbf{3$\times$ (Extended)} \\
+\midrule
+Hosts & 13 & 20 \\
+Subnets & 3 & 5 \\
+Action types & 4 & 6 (+Isolate, +Patch) \\
+Action space & 52 & 120 \\
+Observation dim & 52 & 121 \\
+Red agents & 1 (B\_line) & 3 (B\_line, Meander, Sleep) \\
+Obs delay & 0 steps & 1 step \\
+Training steps & 500K & 750K \\
+Training time & --- & $\approx$40 min (RTX 5090) \\
+DQN reward (vs B\_line) & $-228.1$ & $-278.8$ \\
+DQN vs Random & --- & $+256.8$ (2.1$\times$ better) \\
+Unique actions & 6 & 6 \\
+Action changes/50 steps & 39 (reactive) & 5 (proactive) \\
+Dominant strategy & Analyse $\to$ Remove cycle & Patch $\to$ Restore cycle \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:training_1x_vs_3x} directly overlays the 1$\times$ and 3$\times$ DQN training curves.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{training_1x_vs_3x.png}
+\caption{1$\times$ vs 3$\times$ DQN training comparison. (a)~The 3$\times$ eval reward (red) follows a similar improvement trajectory to 1$\times$ (blue) but converges at a lower value ($-229$ vs $-228$), reflecting the harder multi-adversary problem. (b)~Both models' training losses converge to $\sim$1.0, but 3$\times$ starts lower due to the larger replay buffer (200K vs 100K). (c)~Exploration schedules differ: 1$\times$ decays $\epsilon$ over 30\% of training (reaching 0.05 at 150K), while 3$\times$ uses full-horizon decay (reaching 0.05 only at 750K), allowing extended exploration of the larger action space.}
+\label{fig:training_1x_vs_3x}
+\end{figure}
+
+The comparison reveals that the 3$\times$ agent requires significantly more exploration ($5\times$ the $\epsilon$ decay horizon) to navigate the $2.3\times$ larger action space (120 vs 52), yet converges to comparable reward levels.
+
+\subsection{STIX 2.1 and ATT\&CK Integration}
+
+To bridge simulated cyber operations with real-world threat intelligence, we developed a STIX~2.1 export pipeline that maps CybORG episodes to structured threat data.
+
+\subsubsection{CybORG Action $\to$ ATT\&CK Mapping}
+
+Red agent actions were mapped to MITRE ATT\&CK Enterprise techniques:
+
+\begin{table}[H]
+\centering
+\caption{CybORG Red Actions $\to$ MITRE ATT\&CK Mapping}
+\label{tab:attck_mapping}
+\begin{tabular}{llll}
+\toprule
+\textbf{CybORG Action} & \textbf{Technique ID} & \textbf{Technique Name} & \textbf{Tactic} \\
+\midrule
+DiscoverRemoteSystems & T1018 & Remote System Discovery & Discovery \\
+DiscoverNetworkServices & T1046 & Network Service Scanning & Discovery \\
+ExploitRemoteService & T1210 & Exploit Remote Services & Lateral Movement \\
+\quad EternalBlue & CVE-2017-0144 & MS17-010 SMB exploit & \\
+\quad BlueKeep & CVE-2019-0708 & RDP vulnerability & \\
+\quad SSHBruteForce & T1110.001 & Password Guessing & \\
+PrivilegeEscalate & TA0004 & Privilege Escalation & Priv.\ Escalation \\
+\quad JuicyPotato & T1134.001 & Token Impersonation & \\
+\quad V4L2KernelExploit & T1068 & Kernel Exploitation & \\
+Impact & T1489 & Service Stop & Impact \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Blue actions were mapped to MITRE ATT\&CK mitigations: Isolate $\to$ M1030 (Network Segmentation), Patch $\to$ M1051 (Update Software).
+
+\subsubsection{STIX 2.1 Bundle Structure}
+
+Each exported episode produces a STIX~2.1 bundle containing:
+
+\begin{table}[H]
+\centering
+\caption{STIX 2.1 Export Object Counts (per episode)}
+\begin{tabular}{lccc}
+\toprule
+\textbf{STIX Object} & \textbf{vs Meander} & \textbf{vs B\_line} & \textbf{vs Sleep} \\
+\midrule
+Infrastructure (hosts) & 20 & 20 & 20 \\
+Attack Patterns & 5 & 5 & 5 \\
+Sightings (detected attacks) & 40 & 100 & 0 \\
+Observed Data (per step) & 100 & 100 & 100 \\
+Relationships & 15 & 15 & 15 \\
+Indicators & 5 & 5 & 5 \\
+Courses of Action (defenses) & 6 & 6 & 6 \\
+\midrule
+\textbf{Total objects} & \textbf{192} & \textbf{252} & \textbf{152} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{ATT\&CK Technique Coverage}
+
+Technique sighting frequencies from the 3$\times$ Meander episode:
+
+\begin{table}[H]
+\centering
+\caption{ATT\&CK Technique Sightings (vs Meander, 100 steps)}
+\begin{tabular}{llcl}
+\toprule
+\textbf{Technique} & \textbf{Name} & \textbf{Count} & \textbf{Compromised Hosts} \\
+\midrule
+TA0004 & Privilege Escalation & 16 & User0--6, Enterprise0--2, Defender \\
+T1210 & Exploit Remote Services & 11 & User0--6, Enterprise0--2 \\
+T1046 & Network Service Scanning & 11 & (all subnets scanned) \\
+T1018 & Remote System Discovery & 2 & (subnet-level) \\
+\midrule
+ & \textbf{Total hosts compromised} & & \textbf{11 / 20} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+ATT\&CK Navigator layer files are generated for visual heatmap analysis, importable at \url{https://mitre-attack.github.io/attack-navigator/}.
+
+\section{Discussion}
+
+\subsection{Why Policy Gradient Methods Failed}
+
+PPO and LSTM-PPO learn a policy $\pi(a|s)$ that produces a probability distribution over actions. Our experiments show these methods converge to near-uniform distributions:
+
+\begin{equation}
+    \pi(a|s) \approx \frac{1}{|A|} \quad \forall a \in A
+\end{equation}
+
+When using deterministic inference ($\arg\max$), tiny numerical differences determine the selected action, resulting in the same action regardless of state.
+
+\textbf{Root causes:}
+\begin{enumerate}
+    \item High entropy coefficients encourage exploration but prevent commitment
+    \item Observations may lack sufficient discriminative information
+    \item Action space too large relative to observation signal
+\end{enumerate}
+
+\subsection{Why DQN Succeeded}
+
+DQN learns $Q(s,a)$ values directly, where each action's expected return is estimated independently. This architecture naturally produces \textbf{state-dependent} action selection:
+
+\begin{equation}
+    a^* = \arg\max_a Q(s, a)
+\end{equation}
+
+Key advantages:
+\begin{enumerate}
+    \item Q-values differentiate actions based on state features
+    \item Replay buffer provides stable, decorrelated training
+    \item $\epsilon$-greedy exploration is simpler than entropy regularization
+    \item No distribution collapse - each Q-value is learned independently
+\end{enumerate}
+
+\subsection{Comparison with Original CybORG Paper}
+
+\begin{table}[H]
+\centering
+\caption{Comparison with Standen et al. (2021)}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Aspect} & \textbf{Original Paper} & \textbf{This Work} \\
+\midrule
+Agent Type & Red (attacker) & Blue (defender) \\
+Algorithm & DRQN (DQN + LSTM) & DQN, PPO, LSTM-PPO \\
+Scenario & 3-host penetration & Scenario 1b (13 hosts) \\
+Action Space & 8 actions & 52 actions (hierarchical) \\
+Training Steps & 2,500 iterations & 500,000 steps \\
+Success Metric & System access & Reward maximization \\
+Transfer Rate & 66\% (sim $\to$ emu) & N/A (simulation only) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The original CybORG paper demonstrated DQN with LSTM (DRQN) for Red team training. Our results confirm that value-based methods (DQN) are more effective than policy gradient methods (PPO) for this domain, extending the finding to Blue team defense.
+
+\subsection{3$\times$ Scaling Observations}
+
+Scaling from 13 to 20 hosts with an expanded action space (52 $\to$ 120) revealed several insights:
+
+\begin{enumerate}
+    \item \textbf{Strategy shift}: The 1$\times$ agent learned a reactive Analyse$\to$Remove cycle (39 changes/episode), while the 3$\times$ agent learned a proactive Patch$\to$Restore strategy (5 changes/episode). The larger network favours pre-emptive hardening over responsive containment.
+    \item \textbf{Operational focus}: The 3$\times$ agent directs 92\% of actions to the Operational subnet, demonstrating learned prioritisation of critical infrastructure despite having 5 subnets to defend.
+    \item \textbf{Patch as highest Q}: Patch actions have the highest initial Q-values ($\bar{Q} = 0.40$), confirming that proactive vulnerability management is valued over reactive measures ($\bar{Q}_{\text{Restore}} = -0.27$).
+    \item \textbf{Multi-adversary generalisation}: DQN maintains strong performance across all three Red profiles ($-278.8$ to $-319.1$), despite being trained with random Red selection per episode.
+\end{enumerate}
+
+\subsection{STIX Integration Value}
+
+The STIX~2.1 export pipeline enables several practical applications:
+
+\begin{enumerate}
+    \item \textbf{CTI comparison}: STIX bundles can be imported into MISP or OpenCTI alongside real-world threat feeds to validate that the DQN defender covers operationally relevant ATT\&CK techniques.
+    \item \textbf{Coverage gap analysis}: ATT\&CK Navigator layers visually highlight which techniques are addressed by the Blue policy and which remain undefended.
+    \item \textbf{Incident replay}: Each observed-data step records the exact Red action (with ATT\&CK ID), Blue response, reward, and host-level state, enabling forensic-style timeline reconstruction.
+\end{enumerate}
+
+\subsection{STIX reasoning and metadata explanation}
+
+The exported STIX bundles and ATT\&CK Navigator layers include additional metadata that encodes the RL policy's "reasoning" — linking observed attacker TTPs to the agent's Q‑values and empirical behaviour so analysts can inspect \emph{why} the agent chose a response. The repository artefacts used for this explanation are in \texttt{stix\_export/} (examples: \texttt{policy\_technique\_summary.csv}, \texttt{policy\_host\_q\_summary.csv}, \texttt{q\_metadata.json}, \texttt{q\_values\_patch\_restore.png}).
+
+\paragraph{What the metadata contains}
+\begin{itemize}
+    \item \texttt{sightings\_meander}, \texttt{sightings\_bline}: per-episode counts of technique sightings (evidence frequency).
+    \item \texttt{preferred\_Q\_action}, \texttt{preferred\_Q\_Q}: the action with the highest mean Q for that technique and its Q-value (the agent's "preference").
+    \item \texttt{empirical\_top\_action}, \texttt{empirical\_top\_action\_freq}: the action actually executed most often during evaluation and its frequency (reveals deployment behaviour vs Q preference).
+    \item \texttt{layer\_color}: explicit color used in the Navigator layer to emphasise techniques tied to the learned policy.
+    \item \texttt{evidence\_link}: references to evaluation artefacts (e.g. \texttt{q\_metadata.json}, the per-host heatmap image) so the Navigator tooltip links directly to supporting evidence.
+\end{itemize}
+
+\paragraph{How to read the exported reasoning}
+\begin{enumerate}
+    \item Open an ATT\&CK Navigator layer exported from an episode and select a technique — the technique tooltip contains the metadata fields above.
+    \item Inspect \texttt{preferred\_Q\_action} to see what the agent values (Q-based reasoning), and compare with \texttt{empirical\_top\_action} to observe what the policy actually executed during evaluation.
+    \item Follow \texttt{evidence\_link} to \texttt{stix\_export/q\_metadata.json} or \texttt{q\_values\_patch\_restore.png} for per-host Q-statistics and the heatmap used in Figure~\ref{fig:q_values_patch_restore}.
+\end{enumerate}
+
+\paragraph{Worked example (interpretation)}
+Technique \texttt{T1210} ("Exploitation of Remote Services") shows:
+\begin{itemize}
+    \item \texttt{sightings\_bline} = 47 (high occurrence in B\_line episodes)
+    \item \texttt{preferred\_Q\_action} = \texttt{Patch Op\_Host1} (\texttt{preferred\_Q\_Q} = 0.575)
+    \item \texttt{empirical\_top\_action} = \texttt{Restore Op\_Server0} (900/1000)
+\end{itemize}
+Interpretation: the agent's Q-function assigns highest value to proactively patching \texttt{Op\_Host1}, yet in practice the executed policy performs repeated restores on \texttt{Op\_Server0} because the server is frequently compromised (high sighting count). This divergence is visible in the per-host Q table (Table~\ref{tab:host-q-summary}) and the heatmap (Figure~\ref{fig:q_values_patch_restore}) and suggests an operational trade-off between pre-emptive hardening and reactive recovery.
+
+\paragraph{Practical benefits}
+\begin{itemize}
+    \item Provides an auditable chain: observed Red TTP → technique sighting → agent's Q-preference → executed action (empirical evidence).
+    \item Enables targeted debugging and reward redesign: discrepancies between \texttt{preferred\_Q\_action} and \texttt{empirical\_top\_action} point to reward-shaping or masking opportunities.
+    \item Makes simulation outputs actionable for CTI teams by turning policy behaviour into ATT\&CK‑native artefacts.
+\end{itemize}
+
+\subsection{Limitations}
+
+\begin{enumerate}
+    \item \textbf{Simulation Only}: No emulation validation performed
+    \item \textbf{Static policy at 3$\times$}: The 3$\times$ DQN follows a fixed playbook rather than reacting to observed Red behavior; reward shaping or action masking may improve adaptiveness
+    \item \textbf{Observation Quality}: BlueTableWrapper provides only 4 features per host; richer observations could enable more nuanced policies
+    \item \textbf{STIX fidelity}: Red action mapping relies on CybORG's \texttt{get\_last\_action} API (ground truth); real-world defenders would only observe partial indicators
+\end{enumerate}
+
+\section{Conclusion}
+
+This study demonstrates that \textbf{DQN significantly outperforms PPO and LSTM-PPO} for training Blue team agents in CybORG, and that the approach scales to larger, more complex networks. The key findings are:
+
+\begin{enumerate}
+    \item \textbf{1$\times$ baseline}: Policy gradient methods suffer from action collapse, while DQN learns state-dependent policies with 39 action changes per episode and achieves the best reward ($-228.1$)
+    \item \textbf{3$\times$ scaling}: DQN scales to 20 hosts / 120 actions / 3 Red agents, achieving $2.1\times$ improvement over random ($-228.4$ vs $-485.2$) with a proactive Patch$\to$Restore strategy
+    \item \textbf{Strategy evolution}: Scaling shifts the optimal policy from reactive (Analyse$\to$Remove cycle) to proactive (Patch gateways, then continuously Restore the critical OT server)
+    \item \textbf{STIX~2.1 bridge}: Simulation episodes can be exported as standards-compliant threat intelligence, with ATT\&CK technique sightings (T1018, T1046, T1210, TA0004) and Navigator heatmaps for coverage analysis
+\end{enumerate}
+
+These results confirm that value-based RL is well-suited for autonomous cyber defense and demonstrate a viable pathway from simulation training to operational threat intelligence integration.
+
+\section{Future Work}
+
+\begin{enumerate}
+    \item \textbf{Emulation Validation}: Test trained DQN agent on AWS virtual infrastructure to measure sim-to-real transfer rate
+    \item \textbf{Reactive 3$\times$ policy}: Apply reward shaping or action masking to make the 3$\times$ agent state-dependent (currently 5 vs 39 action changes)
+    \item \textbf{10$\times$ scaling}: Extend to 100+ hosts with graph neural network architectures for generalisation across topologies
+    \item \textbf{STIX round-trip}: Ingest real-world STIX/TAXII feeds to initialise CybORG scenarios matching observed threat actor TTPs
+    \item \textbf{Multi-Agent Training}: Co-evolve Red and Blue agents with self-play
+    \item \textbf{Transfer Learning}: Apply trained agents across CybORG scenarios (1b $\to$ 3$\times$ $\to$ CAGE Challenge 2)
+\end{enumerate}
+
+\bibliographystyle{plain}
+\begin{thebibliography}{9}
+
+\bibitem{standen2021cyborg}
+Maxwell Standen, Martin Lucas, David Bowman, Toby J. Richer, Junae Kim, and Damian Marriott.
+\textit{CybORG: A Gym for the Development of Autonomous Cyber Agents}.
+IJCAI-21 1st International Workshop on Adaptive Cyber Defense, 2021.
+arXiv:2108.09118.
+
+\bibitem{schulman2017proximal}
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
+\textit{Proximal Policy Optimization Algorithms}.
+arXiv preprint arXiv:1707.06347, 2017.
+
+\bibitem{mnih2015human}
+Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei A. Rusu, Joel Veness, Marc G. Bellemare, Alex Graves, Martin Riedmiller, Andreas K. Fidjeland, Georg Ostrovski, et al.
+\textit{Human-level control through deep reinforcement learning}.
+Nature, 518(7540):529--533, 2015.
+
+\bibitem{hausknecht2015deep}
+Matthew Hausknecht and Peter Stone.
+\textit{Deep Recurrent Q-Learning for Partially Observable MDPs}.
+AAAI Fall Symposium Series, 2015.
+
+\bibitem{brockman2016openai}
+Greg Brockman, Vicki Cheung, Ludwig Pettersson, Jonas Schneider, John Schulman, Jie Tang, and Wojciech Zaremba.
+\textit{OpenAI Gym}.
+arXiv preprint arXiv:1606.01540, 2016.
+
+\bibitem{stix2021}
+OASIS Cyber Threat Intelligence Technical Committee.
+\textit{STIX Version 2.1}.
+OASIS Standard, 2021.
+\url{https://docs.oasis-open.org/cti/stix/v2.1/stix-v2.1.html}.
+
+\bibitem{mitre2024}
+MITRE Corporation.
+\textit{ATT\&CK: Adversarial Tactics, Techniques, and Common Knowledge}.
+\url{https://attack.mitre.org/}, 2024.
+
+\end{thebibliography}
+
+\appendix
+
+\section{Hyperparameters}
+
+\begin{table}[H]
+\centering
+\caption{Complete Hyperparameter Configuration}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Parameter} & \textbf{PPO} & \textbf{LSTM-PPO} & \textbf{DQN} \\
+\midrule
+Learning Rate & $3 \times 10^{-4}$ & $3 \times 10^{-4}$ & $1 \times 10^{-4}$ \\
+Batch Size & 64 & 64 & 64 \\
+Discount ($\gamma$) & 0.99 & 0.99 & 0.99 \\
+Network & [256, 256] & LSTM(128) + [128, 64] & [256, 256, 128] \\
+Entropy Coef. & 0.05 & 0.01 & N/A \\
+Exploration & Entropy & Entropy & $\epsilon$-greedy \\
+Replay Buffer & N/A & N/A & 100,000 \\
+Training Steps & 500,000 & 500,000 & 500,000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{3$\times$ DQN Hyperparameters}
+\begin{tabular}{lc}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Learning Rate & $1 \times 10^{-4}$ \\
+Batch Size & 128 \\
+Discount ($\gamma$) & 0.99 \\
+Network & [512, 256, 128] \\
+Replay Buffer & 200,000 \\
+Exploration ($\epsilon$) & $1.0 \to 0.05$ (linear, full training) \\
+Target Update & 1,000 steps \\
+Training Steps & 750,000 \\
+GPU & NVIDIA RTX 5090 (CUDA 12.8) \\
+FPS & $\approx$308 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Action Space Mapping}
+
+\begin{table}[H]
+\centering
+\caption{Hierarchical Action Encoding}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Action Type} & \textbf{Type Index} & \textbf{Action Range} \\
+\midrule
+Monitor & 0 & 0--12 \\
+Analyse & 1 & 13--25 \\
+Remove & 2 & 26--38 \\
+Restore & 3 & 39--51 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Policy evidence tables}
+
+\subsection{Per-technique policy summary}
+
+\begin{table}[H]
+\centering
+\caption{Per-technique policy summary (excerpt from \texttt{stix\_export/policy\_technique\_summary.csv})}
+\label{tab:technique-summary}
+\begin{tabular}{llrrlr}
+\toprule
+Technique ID & Technique name & Sightings (Meander) & Sightings (B\_line) & Preferred Q action & Empirical top action (freq) \\
+\midrule
+T1210 & Exploitation of Remote Services & 11 & 47 & \texttt{Patch Op\_Host1} (0.575) & \texttt{Restore Op\_Server0} (900/1000) \\
+T1068 & Exploitation for Privilege Escalation & 16 & 47 & \texttt{Patch Op\_Host1} (0.575) & \texttt{Restore Op\_Server0} (900/1000) \\
+T1046 & Network Service Discovery & 11 & 4 & \texttt{Patch Op\_Host1} (0.575) & \texttt{Restore Op\_Server0} (900/1000) \\
+T1018 & Software Discovery & 2 & 2 & \texttt{Patch Op\_Host1} (0.575) & \texttt{Restore Op\_Server0} (900/1000) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Per-host Patch / Restore Q-values and counts}
+
+\begin{table}[H]
+\centering
+\caption{Per-host Patch / Restore Q-values and empirical counts (B\_line / Meander). Full CSV: \texttt{stix\_export/policy\_host\_q\_summary.csv}}
+\label{tab:host-q-summary}
+\scriptsize
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Host & Patch Q (B) & Restore Q (B) & Patch \# (B) & Restore \# (B) & Patch Q (M) & Restore Q (M) & Patch \# (M) & Restore \# (M) \\
+\midrule
+\texttt{Defender} & 0.406 & -0.237 & 0 & 0 & 0.406 & -0.237 & 0 & 0 \\
+\texttt{Enterprise0} & 0.466 & -0.337 & 20 & 0 & 0.466 & -0.337 & 20 & 0 \\
+\texttt{Enterprise1} & 0.486 & -0.103 & 0 & 0 & 0.486 & -0.103 & 0 & 0 \\
+\texttt{Enterprise2} & 0.479 & -0.106 & 0 & 0 & 0.479 & -0.106 & 0 & 0 \\
+\texttt{Op\_Host0} & 0.320 & 0.085 & 0 & 0 & 0.320 & 0.085 & 0 & 0 \\
+\texttt{Op\_Host1} & 0.575 & -0.250 & 20 & 0 & 0.575 & -0.250 & 20 & 0 \\
+\texttt{Op\_Host2} & 0.376 & -0.325 & 0 & 0 & 0.376 & -0.325 & 0 & 0 \\
+\texttt{Op\_Server0} & 0.256 & -0.752 & 0 & 900 & 0.256 & -0.752 & 0 & 900 \\
+\texttt{User0} & 0.507 & -0.329 & 0 & 0 & 0.507 & -0.329 & 0 & 0 \\
+\texttt{User1} & 0.325 & -0.328 & 20 & 0 & 0.325 & -0.328 & 20 & 0 \\
+\texttt{User2} & 0.102 & -0.249 & 0 & 0 & 0.102 & -0.249 & 0 & 0 \\
+\texttt{User3} & 0.386 & -0.027 & 0 & 0 & 0.386 & -0.027 & 0 & 0 \\
+\texttt{User4} & 0.140 & -0.257 & 0 & 0 & 0.140 & -0.257 & 0 & 0 \\
+\texttt{User5} & 0.416 & -0.226 & 0 & 0 & 0.416 & -0.226 & 0 & 0 \\
+\texttt{User6} & 0.523 & -0.319 & 0 & 0 & 0.523 & -0.319 & 0 & 0 \\
+\texttt{DMZ\_Server0} & 0.420 & -0.423 & 20 & 0 & 0.420 & -0.423 & 20 & 0 \\
+\texttt{DMZ\_Server1} & 0.460 & -0.065 & 0 & 0 & 0.460 & -0.065 & 0 & 0 \\
+\texttt{Research0} & 0.554 & -0.250 & 20 & 0 & 0.554 & -0.250 & 20 & 0 \\
+\texttt{Research1} & 0.389 & -0.546 & 0 & 0 & 0.389 & -0.546 & 0 & 0 \\
+\texttt{Research2} & 0.349 & -0.435 & 0 & 0 & 0.349 & -0.435 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textbf{Notes:} The tables above are generated from the evaluation artifacts produced by \texttt{export\_policy\_tables.py}. The full CSVs and the per-host Q heatmap (Figure~\ref{fig:q\_values\_patch\_restore}) are available in the repository under \texttt{stix\_export/}.
+
+\end{document}
