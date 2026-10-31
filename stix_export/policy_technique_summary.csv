@@ -1,0 +1,5 @@
+techniqueID,techniqueName,sightings_meander,sightings_bline,preferred_Q_action,preferred_Q_Q,empirical_top_action,empirical_top_action_freq,layer_color
+T1210,Exploitation of Remote Services,11,47,Patch Op_Host1,0.575,Restore Op_Server0 (900/1000),#1565c0
+T1068,Exploitation for Privilege Escalation,16,47,Patch Op_Host1,0.575,Restore Op_Server0 (900/1000),#43a047
+T1046,Network Service Discovery,11,4,Patch Op_Host1,0.575,Restore Op_Server0 (900/1000),#ff6666
+T1018,Software Discovery,2,2,Patch Op_Host1,0.575,Restore Op_Server0 (900/1000),#ff6666

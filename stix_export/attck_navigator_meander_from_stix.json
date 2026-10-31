@@ -1,0 +1,99 @@
+{
+  "name": "CybORG 3x DQN vs Meander",
+  "versions": {
+    "attack": "16",
+    "navigator": "5.1",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "ATT&CK technique coverage from CybORG 3x DQN simulation vs Meander Red agent",
+  "filters": {
+    "platforms": [
+      "Windows",
+      "Linux"
+    ]
+  },
+  "sorting": 3,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": true,
+    "showName": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "none"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1018",
+      "score": 2,
+      "color": "",
+      "comment": "Observed 2 times in simulation",
+      "enabled": true,
+      "showSubtechniques": false,
+      "tactic": "discovery"
+    },
+    {
+      "techniqueID": "T1046",
+      "score": 11,
+      "color": "",
+      "comment": "Observed 11 times in simulation",
+      "enabled": true,
+      "showSubtechniques": false,
+      "tactic": "discovery"
+    },
+    {
+      "techniqueID": "T1068",
+      "score": 16,
+      "color": "",
+      "comment": "Observed 16 times in simulation",
+      "enabled": true,
+      "showSubtechniques": false,
+      "tactic": "privilege-escalation"
+    },
+    {
+      "techniqueID": "T1210",
+      "score": 11,
+      "color": "",
+      "comment": "Observed 11 times in simulation",
+      "enabled": true,
+      "showSubtechniques": false,
+      "tactic": "lateral-movement"
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#ff6666",
+      "#ff0000"
+    ],
+    "minValue": 0,
+    "maxValue": 16
+  },
+  "legendItems": [
+    {
+      "label": "Red technique (scored by sighting count)",
+      "color": "#ff6666"
+    },
+    {
+      "label": "Blue defense: Patch (M1051 - Update Software)",
+      "color": "#1565c0"
+    },
+    {
+      "label": "Blue defense: Isolate (M1030 - Network Segmentation)",
+      "color": "#1565c0"
+    },
+    {
+      "label": "Blue defense: Analyse/Remove/Restore",
+      "color": "#43a047"
+    }
+  ],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": true,
+  "selectVisibleTechniques": false,
+  "metadata": [],
+  "links": []
+}

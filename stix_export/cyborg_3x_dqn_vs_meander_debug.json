@@ -1,0 +1,32 @@
+{
+  "name": "CybORG 3x DQN vs Meander (debug)",
+  "versions": {
+    "attack": "17",
+    "navigator": "5.3.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Debug layer (v17) with restored technique colors for Meander episode",
+  "filters": { "platforms": ["Windows", "Linux"] },
+  "sorting": 3,
+  "layout": { "layout": "side", "aggregateFunction": "average", "showID": true, "showName": true },
+  "hideDisabled": false,
+  "techniques": [
+    { "techniqueID": "T1018", "score": 2, "color": "#ff6666", "comment": "Observed 2 times in simulation", "enabled": true, "showSubtechniques": false, "tactic": "discovery", "metadata": [ { "name": "sightings", "value": "2" }, { "name": "policy_top_action", "value": "Restore Op_Server0 (empirical freq ≈ 90%)" }, { "name": "preferred_Q_action", "value": "Patch Op_Host1 (Q=0.575)" }, { "name": "avg_Q_Patch", "value": "0.397" }, { "name": "avg_Q_Restore", "value": "-0.274" }, { "name": "avg_patched_per_ep", "value": "5.0" } ] },
+    { "techniqueID": "T1046", "score": 11, "color": "#ff6666", "comment": "Observed 11 times in simulation", "enabled": true, "showSubtechniques": false, "tactic": "discovery", "metadata": [ { "name": "sightings", "value": "11" }, { "name": "policy_top_action", "value": "Restore Op_Server0 (empirical freq ≈ 90%)" }, { "name": "preferred_Q_action", "value": "Patch Op_Host1 (Q=0.575)" }, { "name": "avg_Q_Patch", "value": "0.397" }, { "name": "avg_Q_Restore", "value": "-0.274" }, { "name": "avg_patched_per_ep", "value": "5.0" } ] },
+    { "techniqueID": "T1068", "color": "#43a047", "comment": "Observed 16 times in simulation", "enabled": true, "showSubtechniques": false, "tactic": "privilege-escalation", "metadata": [ { "name": "sightings", "value": "16" }, { "name": "policy_top_action", "value": "Restore Op_Server0 (empirical freq ≈ 90%)" }, { "name": "preferred_Q_action", "value": "Patch Op_Host1 (Q=0.575)" }, { "name": "avg_Q_Patch", "value": "0.397" }, { "name": "avg_Q_Restore", "value": "-0.274" }, { "name": "avg_patched_per_ep", "value": "5.0" } ] },
+    { "techniqueID": "T1210", "color": "#1565c0", "comment": "Observed 11 times in simulation", "enabled": true, "showSubtechniques": false, "tactic": "lateral-movement", "metadata": [ { "name": "sightings", "value": "11" }, { "name": "policy_top_action", "value": "Restore Op_Server0 (empirical freq ≈ 90%)" }, { "name": "preferred_Q_action", "value": "Patch Op_Host1 (Q=0.575)" }, { "name": "avg_Q_Patch", "value": "0.397" }, { "name": "avg_Q_Restore", "value": "-0.274" }, { "name": "avg_patched_per_ep", "value": "5.0" } ] }
+  ],
+  "gradient": { "colors": ["#ffffff", "#ff6666", "#ff0000"], "minValue": 0, "maxValue": 16 },
+  "legendItems": [ { "label": "Red technique (sighting count)", "color": "#ff6666" }, { "label": "Blue defense: Patch", "color": "#1565c0" }, { "label": "Blue defense: Analyse/Remove/Restore", "color": "#43a047" } ],
+  "metadata": [
+    { "name": "policy_summary", "value": "Patch → Restore playbook; patches ~5 hosts/ep; Restore loop on Op_Server0" },
+    { "name": "preferred_Q_action", "value": "Patch Op_Host1 (Q≈0.575)" },
+    { "name": "empirical_top_action", "value": "Restore Op_Server0 (~90% actions)" },
+    { "name": "avg_patched_per_ep", "value": "5.0" }
+  ],
+  "links": [
+    { "label": "Q-values heatmap (Patch/Restore)", "url": "file:///d:/Vasanth/RL_CYB/stix_export/q_values_patch_restore.png" },
+    { "label": "Q-metadata (JSON)", "url": "file:///d:/Vasanth/RL_CYB/stix_export/q_metadata.json" }
+  ]
+}

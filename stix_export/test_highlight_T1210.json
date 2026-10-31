@@ -1,0 +1,49 @@
+{
+  "name": "Test Highlight T1210",
+  "versions": {
+    "attack": "16",
+    "navigator": "5.1",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Minimal test: T1210 highlighted blue",
+  "filters": {
+    "platforms": ["Windows", "Linux"]
+  },
+  "sorting": 3,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": true,
+    "showName": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "none"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1210",
+      "color": "#1565c0",
+      "comment": "Test: should be blue",
+      "enabled": true,
+      "showSubtechniques": false,
+      "tactic": "lateral-movement"
+    }
+  ],
+  "gradient": {
+    "colors": ["#ffffff", "#ff6666", "#ff0000"],
+    "minValue": 0,
+    "maxValue": 1
+  },
+  "legendItems": [
+    {"label": "Blue defense: Patch (M1051)", "color": "#1565c0"}
+  ],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": true,
+  "selectVisibleTechniques": false,
+  "metadata": [],
+  "links": []
+}

@@ -1,0 +1,368 @@
+\documentclass[11pt,a4paper]{article}
+
+% ── Packages ──
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% ── Colours ──
+\definecolor{headerblue}{HTML}{2C3E50}
+\definecolor{accentgreen}{HTML}{27AE60}
+\definecolor{warnorange}{HTML}{E67E22}
+\definecolor{dangerred}{HTML}{E74C3C}
+\definecolor{codebg}{HTML}{F5F5F5}
+\definecolor{codeframe}{HTML}{CCCCCC}
+
+% ── Hyperref setup ──
+\hypersetup{
+    colorlinks=true,
+    linkcolor=headerblue,
+    urlcolor=headerblue,
+    citecolor=headerblue
+}
+
+% ── Section formatting ──
+\titleformat{\section}
+    {\Large\bfseries\color{headerblue}}{\thesection}{1em}{}
+\titleformat{\subsection}
+    {\large\bfseries\color{headerblue!80}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+    {\normalsize\bfseries\color{headerblue!60}}{\thesubsubsection}{1em}{}
+
+% ── Listings style ──
+\lstdefinestyle{simspec}{
+    backgroundcolor=\color{codebg},
+    frame=single,
+    rulecolor=\color{codeframe},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    xleftmargin=1em,
+    framexleftmargin=0.5em,
+    aboveskip=1em,
+    belowskip=1em,
+}
+
+% ── Header / Footer ──
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{headerblue}{Scaling CybORG Simulation Complexity}}
+\fancyhead[R]{\small\textcolor{headerblue}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ── Custom column types ──
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% ══════════════════════════════════════════════════════════════
+\begin{document}
+
+% ── Title ──
+\begin{center}
+    {\LARGE\bfseries\color{headerblue} Scaling CybORG Simulation Complexity:\\[4pt]
+    From Scenario\,1b to Enterprise-Scale Cyber Defence}\\[12pt]
+    {\large Vasanth}\\[4pt]
+    {\normalsize February 2026}
+\end{center}
+
+\vspace{1em}
+\hrule height 0.5pt
+\vspace{1.5em}
+
+% ══════════════════════════════════════════════════════════════
+\section{Introduction}
+
+This document analyses the complexity of the current CybORG Scenario\,1b simulation
+used for training reinforcement learning (RL) agents for autonomous cyber defence,
+and describes what a simulation \textbf{one order of magnitude higher} in complexity
+would look like across six key axes: network scale, attacker sophistication,
+defender action space, observation realism, reward structure, and multi-agent
+organisation.
+
+% ══════════════════════════════════════════════════════════════
+\section{Current vs.\ One Order Higher}
+
+% ── 2.1 Network Scale ──
+\subsection{Network Scale}
+
+\begin{table}[h!]
+\centering
+\caption{Network scale comparison}
+\label{tab:network}
+\begin{tabularx}{\textwidth}{@{} l X X @{}}
+\toprule
+\textbf{Aspect} & \textbf{Current (Scenario\,1b)} & \textbf{$\mathbf{10\times}$ Higher} \\
+\midrule
+Hosts & 13 & 100--200 (departmental segments, DMZs, cloud VMs, IoT endpoints) \\
+Subnets & 3 (User, Enterprise, Operational) & 15--30 (HR, Finance, R\&D, OT floor, SCADA, cloud VPC, VPN gateway, partner extranet, IoT) \\
+Inter-subnet routing & Flat ACLs (\texttt{in: all/None}) & Dynamic firewall rules, micro-segmentation, NAT, VPN tunnels, SDN policies \\
+Topology & Static, fully known & Partially observable; hosts spin up/down (auto-scaling), DHCP-assigned IPs \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\noindent
+\textbf{Observation space impact:} $\sim$11,293 $\;\longrightarrow\;$ $\sim$100K--500K
+(or a graph neural network representation would replace the flat vector).
+
+% ── 2.2 Attacker Sophistication ──
+\subsection{Attacker Sophistication}
+
+\begin{table}[h!]
+\centering
+\caption{Attacker sophistication comparison}
+\label{tab:attacker}
+\begin{tabularx}{\textwidth}{@{} l X X @{}}
+\toprule
+\textbf{Aspect} & \textbf{Current} & \textbf{$\mathbf{10\times}$ Higher} \\
+\midrule
+Red agents & 2 (B\_line, Meander) & 8--12 distinct adversary profiles \\[3pt]
+Attack techniques & 6 actions (discover, exploit, escalate, impact) &
+    30--50 MITRE ATT\&CK techniques: spear-phishing, credential stuffing,
+    LOLBins, supply-chain implants, fileless malware, DNS tunnelling, DGA C2 \\[3pt]
+Multi-stage campaigns & Single kill chain &
+    Branching kill chains with fallback strategies \\[3pt]
+Stealth / evasion & None---Red is oblivious to Blue &
+    Adaptive adversary: detects Blue's monitoring, slows down, uses encrypted
+    channels, timestamps attacks during business hours to blend with Green \\[3pt]
+Persistence & Removed by \texttt{Restore} &
+    Multiple persistence mechanisms per host (registry keys, scheduled tasks,
+    bootkits)---partial removal possible \\[3pt]
+Lateral movement & Linear (User $\to$ Enterprise $\to$ Operational) &
+    Graph-based: any compromised host can pivot to any reachable host;
+    credential reuse, pass-the-hash, Kerberoasting \\[3pt]
+Multi-agent Red & 1 attacker &
+    2--3 coordinated Red teams (e.g.\ initial access broker hands off
+    to ransomware operator) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ── 2.3 Defender Action Space ──
+\subsection{Defender Action Space}
+
+\begin{table}[h!]
+\centering
+\caption{Defender action space comparison}
+\label{tab:defender}
+\begin{tabularx}{\textwidth}{@{} l X X @{}}
+\toprule
+\textbf{Aspect} & \textbf{Current} & \textbf{$\mathbf{10\times}$ Higher} \\
+\midrule
+Blue actions & 6 types (Monitor, Analyse, Remove, Misinform, Restore, Sleep) &
+    20--30 action types \\[3pt]
+New actions & --- &
+    \texttt{IsolateHost}, \texttt{BlockIP}, \texttt{UpdateFirewallRule},
+    \texttt{DeployHoneypot}, \texttt{RotateCredentials},
+    \texttt{PatchVulnerability}, \texttt{EnableMFA},
+    \texttt{TakeForensicImage}, \texttt{EscalateToHuman},
+    \texttt{DeployEDR}, \texttt{SinkholeDNS}, \texttt{RevokeToken},
+    \texttt{SegmentSubnet} \\[3pt]
+Action targeting & 1 host at a time &
+    Batch actions (e.g.\ patch all hosts in a subnet), conditional actions
+    (if $X$ then $Y$), resource budgets (max 3 actions/turn) \\[3pt]
+Action duration & Instant (1 step) &
+    Multi-step: forensic image $=$ 3 turns, patching $=$ 2 turns with
+    downtime window \\[3pt]
+Action cost model & Fixed (\texttt{Restore} $= -1$) &
+    Variable costs: monetary budget, analyst time, user-disruption SLA,
+    downtime windows \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\noindent
+\textbf{Action space impact:}
+$\text{Discrete}(54) \;\longrightarrow\; \text{Discrete}(300\text{--}600)$
+or continuous / multi-discrete.
+
+% ── 2.4 Observation Realism ──
+\subsection{Observation Realism}
+
+\begin{table}[h!]
+\centering
+\caption{Observation realism comparison}
+\label{tab:obs}
+\begin{tabularx}{\textwidth}{@{} l X X @{}}
+\toprule
+\textbf{Aspect} & \textbf{Current} & \textbf{$\mathbf{10\times}$ Higher} \\
+\midrule
+Sensor feeds & Single flat vector from \texttt{FixedFlatWrapper} &
+    Multiple heterogeneous streams: SIEM alerts (structured), NetFlow
+    (time-series), EDR telemetry (event logs), DNS query logs,
+    authentication logs \\[3pt]
+Noise model & Green agent does ping / port scan &
+    Realistic traffic distributions: 10,000+ benign events/turn with rare
+    anomalies; false-positive rates of 1--5\%; alert-fatigue modelling \\[3pt]
+Observation delay & Instant (same turn) &
+    Delayed / lossy: network tap misses 2\% of packets, SIEM has 30\,s
+    ingestion lag, some hosts report only every $N$ turns \\[3pt]
+Deception by Red & None &
+    Red plants false indicators: fake log entries, timestomping,
+    anti-forensics that corrupt Blue's \texttt{Analyse} results \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ── 2.5 Reward and Objective Complexity ──
+\subsection{Reward and Objective Complexity}
+
+\begin{table}[h!]
+\centering
+\caption{Reward and objective complexity comparison}
+\label{tab:reward}
+\begin{tabularx}{\textwidth}{@{} l X X @{}}
+\toprule
+\textbf{Aspect} & \textbf{Current} & \textbf{$\mathbf{10\times}$ Higher} \\
+\midrule
+Reward signal & Per-host penalty based on Red access &
+    Multi-objective: confidentiality loss (exfiltration volume), availability
+    (SLA uptime~\%), integrity (tampered records), compliance (audit score),
+    reputation damage \\[3pt]
+Business context & Hosts equally interchangeable within tier &
+    Asset criticality graph: ERP database $= 100\times$ a user laptop;
+    CEO's laptop has board-level secrets; OT controller failure $\Rightarrow$
+    physical safety risk \\[3pt]
+Time pressure & Fixed episode (30 / 50 / 100 steps) &
+    Open-ended episodes with escalating threat level, shift changes
+    (night shift $=$ fewer analysts), maintenance windows \\[3pt]
+Opponent co-adaptation & Red is fixed &
+    Red adapts to Blue's strategy over episodes (game-theoretic,
+    non-stationary) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ── 2.6 Multi-Agent and Organisational ──
+\subsection{Multi-Agent and Organisational}
+
+\begin{table}[h!]
+\centering
+\caption{Multi-agent and organisational comparison}
+\label{tab:multiagent}
+\begin{tabularx}{\textwidth}{@{} l X X @{}}
+\toprule
+\textbf{Aspect} & \textbf{Current} & \textbf{$\mathbf{10\times}$ Higher} \\
+\midrule
+Blue agents & 1 autonomous agent &
+    SOC team of 3--5 agents with roles (Tier\,1 triage, Tier\,2
+    investigation, Tier\,3 incident response); communication overhead;
+    coordination \\[3pt]
+Human-in-the-loop & None &
+    Escalation to human analyst with response delay; approval required
+    for high-impact actions (isolating a production server) \\[3pt]
+Cross-organisation & Single network &
+    Federated defence: share threat intel with partner organisations,
+    coordinated response across supply chain \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ══════════════════════════════════════════════════════════════
+\section{Concrete Specification}
+
+The following listing summarises what a $10\times$ simulation would look like
+as a concrete scenario specification:
+
+\begin{lstlisting}[style=simspec]
+Simulation: "Enterprise SOC Scenario"
+--------------------------------------
+Network:      150 hosts, 20 subnets, 3 cloud VPCs, 1 OT segment
+Obs space:    ~250,000-d (or graph: 150 nodes x 200 features + edge matrix)
+Action space: MultiDiscrete([25, 150, 5])  ->  action_type x target x priority
+Red agents:   8 profiles (APT28-style, ransomware, insider threat, ...)
+Blue agents:  3 cooperating agents with role specialisation
+Episode:      500-1000 steps (simulating ~1 week of real time)
+Sensors:      SIEM (delayed), EDR (per-host), NetFlow (sampled), DNS logs
+Budget:       100 analyst-hours/episode, $50K incident response budget
+Objectives:   Minimise data loss, maintain 99.5% uptime SLA,
+              comply with audit requirements, minimise response cost
+\end{lstlisting}
+
+% ══════════════════════════════════════════════════════════════
+\section{Key Technical Challenges at This Scale}
+
+\begin{table}[h!]
+\centering
+\caption{Technical challenges introduced by $10\times$ scaling}
+\label{tab:challenges}
+\begin{tabularx}{\textwidth}{@{} l X @{}}
+\toprule
+\textbf{Challenge} & \textbf{Why It Is Hard} \\
+\midrule
+Observation representation &
+    Flat vectors do not scale to 150+ hosts. Requires \textbf{graph neural
+    networks} (GNN) or \textbf{attention-based architectures} to handle
+    variable-size, relational observations. \\[4pt]
+Action space explosion &
+    $25 \times 150 = 3{,}750$ actions. Requires \textbf{hierarchical RL},
+    \textbf{action abstraction}, or \textbf{parameterised action spaces}. \\[4pt]
+Multi-agent coordination &
+    3--5 Blue agents must share information and avoid redundant actions
+    $\Rightarrow$ \textbf{MARL} (QMIX, MAPPO, communication protocols). \\[4pt]
+Non-stationary opponent &
+    Adaptive Red requires \textbf{meta-learning}, \textbf{robust RL}, or
+    \textbf{game-theoretic approaches} (PSRO, fictitious play). \\[4pt]
+Sample efficiency &
+    Complex simulation is slow to run. Requires \textbf{model-based RL},
+    \textbf{transfer learning} from simpler scenarios, or \textbf{offline RL}
+    from real SOC data. \\[4pt]
+Sim-to-real gap &
+    More complex simulation $\neq$ more realistic. Requires
+    \textbf{domain randomisation} and \textbf{calibration against real
+    network telemetry}. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ══════════════════════════════════════════════════════════════
+\section{Recommended Progression}
+
+Rather than jumping directly to $10\times$ complexity, a practical staged
+progression from the current Scenario\,1b setup is recommended:
+
+\begin{enumerate}[leftmargin=2em, itemsep=6pt]
+    \item \textbf{$\mathbf{3\times}$ complexity} ---
+        Add 5 more hosts, 2 more subnets, 3 Red agent profiles.
+        Introduce \texttt{IsolateHost} and \texttt{PatchVulnerability} actions.
+        Add observation delay (1-step lag).
+
+    \item \textbf{$\mathbf{5\times}$ complexity} ---
+        Switch to \textbf{graph-based observation} (adjacency matrix $+$
+        node features).  Add multi-step actions.  Introduce analyst time
+        budget.  Add adaptive Red agent.
+
+    \item \textbf{$\mathbf{10\times}$ complexity} ---
+        Multi-agent Blue team.  Full MITRE ATT\&CK action set.  Realistic
+        traffic noise model.  Multi-objective reward.
+\end{enumerate}
+
+\vspace{0.5em}
+\noindent
+The current DQN result demonstrates that the core ``don't collapse to one
+action'' problem has been solved.  The next meaningful step is
+\textbf{moving from flat observations to graph-structured representations}
+--- that single change would unlock scalability to much larger networks
+without the 11,293-dimensional sparse vector problem.
+
+% ══════════════════════════════════════════════════════════════
+\vfill
+\hrule height 0.5pt
+\vspace{0.5em}
+\begin{center}
+\small\textcolor{gray}{Generated for the RL\_CYB project -- February 2026}
+\end{center}
+
+\end{document}

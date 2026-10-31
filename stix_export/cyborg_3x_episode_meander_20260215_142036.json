@@ -1,0 +1,4703 @@
+{
+  "type": "bundle",
+  "id": "bundle--366f818d-9f59-4ba0-a521-842c13efbe52",
+  "objects": [
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--18bda990-6ce4-453c-9384-a9837c778769",
+      "created": "2026-02-15T20:20:35.762066+00:00",
+      "modified": "2026-02-15T20:20:35.762082+00:00",
+      "name": "User0",
+      "description": "workstation (windows) in User subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "User",
+      "x_os": "windows",
+      "x_criticality": "low"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--3f23b299-0af8-4558-83e1-7daa356279b3",
+      "created": "2026-02-15T20:20:35.762091+00:00",
+      "modified": "2026-02-15T20:20:35.762093+00:00",
+      "name": "User1",
+      "description": "workstation (windows) in User subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "User",
+      "x_os": "windows",
+      "x_criticality": "low"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--76e1fa91-d187-44d3-bea9-73e3c918e2a5",
+      "created": "2026-02-15T20:20:35.762097+00:00",
+      "modified": "2026-02-15T20:20:35.762098+00:00",
+      "name": "User2",
+      "description": "workstation (windows) in User subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "User",
+      "x_os": "windows",
+      "x_criticality": "low"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c2d8f921-edde-48a6-a659-20b013998679",
+      "created": "2026-02-15T20:20:35.762102+00:00",
+      "modified": "2026-02-15T20:20:35.762104+00:00",
+      "name": "User3",
+      "description": "workstation (linux) in User subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "User",
+      "x_os": "linux",
+      "x_criticality": "low"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--e7ec2fc2-ea5b-4459-a302-43298628eaab",
+      "created": "2026-02-15T20:20:35.762107+00:00",
+      "modified": "2026-02-15T20:20:35.762108+00:00",
+      "name": "User4",
+      "description": "workstation (linux) in User subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "User",
+      "x_os": "linux",
+      "x_criticality": "low"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--8adc15c1-6623-4fd1-add9-f7455304d075",
+      "created": "2026-02-15T20:20:35.762113+00:00",
+      "modified": "2026-02-15T20:20:35.762113+00:00",
+      "name": "User5",
+      "description": "workstation (windows) in User subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "User",
+      "x_os": "windows",
+      "x_criticality": "low"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--1889e313-c108-49b9-a15a-d4865b1f9e0f",
+      "created": "2026-02-15T20:20:35.762118+00:00",
+      "modified": "2026-02-15T20:20:35.762119+00:00",
+      "name": "User6",
+      "description": "workstation (linux) in User subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "User",
+      "x_os": "linux",
+      "x_criticality": "low"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c9220b7c-85b6-403a-9732-03127fb2710f",
+      "created": "2026-02-15T20:20:35.762122+00:00",
+      "modified": "2026-02-15T20:20:35.762123+00:00",
+      "name": "Enterprise0",
+      "description": "gateway (linux) in Enterprise subnet",
+      "infrastructure_types": [
+        "gateway"
+      ],
+      "x_subnet": "Enterprise",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--50cc6224-be95-47ee-a57a-61c5c5fbc0e8",
+      "created": "2026-02-15T20:20:35.762126+00:00",
+      "modified": "2026-02-15T20:20:35.762127+00:00",
+      "name": "Enterprise1",
+      "description": "server (linux) in Enterprise subnet",
+      "infrastructure_types": [
+        "server"
+      ],
+      "x_subnet": "Enterprise",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--3d040d8f-d406-4108-81b8-08a516d32918",
+      "created": "2026-02-15T20:20:35.762133+00:00",
+      "modified": "2026-02-15T20:20:35.762134+00:00",
+      "name": "Enterprise2",
+      "description": "server (linux) in Enterprise subnet",
+      "infrastructure_types": [
+        "server"
+      ],
+      "x_subnet": "Enterprise",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--bad05992-5e99-45fc-9b5e-2249e62eea72",
+      "created": "2026-02-15T20:20:35.762137+00:00",
+      "modified": "2026-02-15T20:20:35.762138+00:00",
+      "name": "Defender",
+      "description": "monitoring (linux) in Enterprise subnet",
+      "infrastructure_types": [
+        "monitoring"
+      ],
+      "x_subnet": "Enterprise",
+      "x_os": "linux",
+      "x_criticality": "high"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--e595d99e-c228-4169-9338-998ab97a1455",
+      "created": "2026-02-15T20:20:35.762142+00:00",
+      "modified": "2026-02-15T20:20:35.762142+00:00",
+      "name": "Op_Host0",
+      "description": "gateway (linux) in Operational subnet",
+      "infrastructure_types": [
+        "gateway"
+      ],
+      "x_subnet": "Operational",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--abc5a062-f9b7-43bb-bc24-4eef8216e480",
+      "created": "2026-02-15T20:20:35.762145+00:00",
+      "modified": "2026-02-15T20:20:35.762146+00:00",
+      "name": "Op_Host1",
+      "description": "gateway (linux) in Operational subnet",
+      "infrastructure_types": [
+        "gateway"
+      ],
+      "x_subnet": "Operational",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--f20d0071-25b7-45ee-a909-c278b7a9b867",
+      "created": "2026-02-15T20:20:35.762149+00:00",
+      "modified": "2026-02-15T20:20:35.762150+00:00",
+      "name": "Op_Host2",
+      "description": "gateway (linux) in Operational subnet",
+      "infrastructure_types": [
+        "gateway"
+      ],
+      "x_subnet": "Operational",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--6741490b-f872-49d1-b002-a76ce9356d2d",
+      "created": "2026-02-15T20:20:35.762153+00:00",
+      "modified": "2026-02-15T20:20:35.762154+00:00",
+      "name": "Op_Server0",
+      "description": "ot-server (linux) in Operational subnet",
+      "infrastructure_types": [
+        "ot-server"
+      ],
+      "x_subnet": "Operational",
+      "x_os": "linux",
+      "x_criticality": "critical"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--596a1ea1-aa22-4eb4-b82a-5206099ba4f4",
+      "created": "2026-02-15T20:20:35.762157+00:00",
+      "modified": "2026-02-15T20:20:35.762157+00:00",
+      "name": "DMZ_Server0",
+      "description": "server (linux) in DMZ subnet",
+      "infrastructure_types": [
+        "server"
+      ],
+      "x_subnet": "DMZ",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--822f65c5-3312-4eff-9f82-4ef369f463ad",
+      "created": "2026-02-15T20:20:35.762161+00:00",
+      "modified": "2026-02-15T20:20:35.762161+00:00",
+      "name": "DMZ_Server1",
+      "description": "server (linux) in DMZ subnet",
+      "infrastructure_types": [
+        "server"
+      ],
+      "x_subnet": "DMZ",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--3ac735a4-b85c-4c32-aa93-e1bf6145dcca",
+      "created": "2026-02-15T20:20:35.762164+00:00",
+      "modified": "2026-02-15T20:20:35.762165+00:00",
+      "name": "Research0",
+      "description": "workstation (linux) in Research subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "Research",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--b0e87066-b66a-42d1-b150-d47d5c96ddb8",
+      "created": "2026-02-15T20:20:35.762168+00:00",
+      "modified": "2026-02-15T20:20:35.762169+00:00",
+      "name": "Research1",
+      "description": "workstation (linux) in Research subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "Research",
+      "x_os": "linux",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c3b05df0-8722-471a-b86c-ef86173b5b8a",
+      "created": "2026-02-15T20:20:35.762172+00:00",
+      "modified": "2026-02-15T20:20:35.762173+00:00",
+      "name": "Research2",
+      "description": "workstation (windows) in Research subnet",
+      "infrastructure_types": [
+        "workstation"
+      ],
+      "x_subnet": "Research",
+      "x_os": "windows",
+      "x_criticality": "medium"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5e203620-9608-4dab-9b29-ebcfefd26f7a",
+      "created": "2026-02-15T20:20:35.762178+00:00",
+      "modified": "2026-02-15T20:20:35.762179+00:00",
+      "name": "Remote System Discovery",
+      "description": "Adversary scans subnet for live hosts via ICMP ping sweep",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1018",
+          "url": "https://attack.mitre.org/techniques/T1018/"
+        }
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "discovery"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "created": "2026-02-15T20:20:35.762185+00:00",
+      "modified": "2026-02-15T20:20:35.762186+00:00",
+      "name": "Network Service Scanning",
+      "description": "Adversary enumerates open ports and running services on target host",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046",
+          "url": "https://attack.mitre.org/techniques/T1046/"
+        }
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "discovery"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "created": "2026-02-15T20:20:35.762190+00:00",
+      "modified": "2026-02-15T20:20:35.762191+00:00",
+      "name": "Exploitation of Remote Services",
+      "description": "Adversary exploits remote service vulnerability for code execution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1210",
+          "url": "https://attack.mitre.org/techniques/T1210/"
+        }
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "lateral-movement"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "created": "2026-02-15T20:20:35.762195+00:00",
+      "modified": "2026-02-15T20:20:35.762196+00:00",
+      "name": "Exploitation for Privilege Escalation",
+      "description": "Adversary escalates to SYSTEM/root on compromised host",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "url": "https://attack.mitre.org/techniques/T1068/"
+        }
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "privilege-escalation"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--99f546ae-14e5-47d4-a80e-e268eee18d63",
+      "created": "2026-02-15T20:20:35.762199+00:00",
+      "modified": "2026-02-15T20:20:35.762200+00:00",
+      "name": "Service Stop",
+      "description": "Adversary disrupts OTService on operational server",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1489",
+          "url": "https://attack.mitre.org/techniques/T1489/"
+        }
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "impact"
+        }
+      ]
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--71233113-239b-4c3c-956d-39d352cab6a6",
+      "created": "2026-02-15T20:20:35.762205+00:00",
+      "modified": "2026-02-15T20:20:35.762206+00:00",
+      "name": "CybORG_meander",
+      "description": "Adaptive Red agent that opportunistically scans all subnets, exploits all reachable hosts, and escalates privileges before attempting Impact on operational infrastructure.",
+      "threat_actor_types": [
+        "unknown"
+      ],
+      "sophistication": "advanced",
+      "resource_level": "organization",
+      "primary_motivation": "organizational-gain",
+      "x_simulation_agent": "meander"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5704a14e-3da5-459f-b6bf-4b91d7ef537f",
+      "created": "2026-02-15T20:20:35.762211+00:00",
+      "modified": "2026-02-15T20:20:35.762212+00:00",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--71233113-239b-4c3c-956d-39d352cab6a6",
+      "target_ref": "attack-pattern--5e203620-9608-4dab-9b29-ebcfefd26f7a",
+      "description": "Threat actor uses T1018"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6ee6e545-d489-40f0-9177-b863139ccc2e",
+      "created": "2026-02-15T20:20:35.762216+00:00",
+      "modified": "2026-02-15T20:20:35.762217+00:00",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--71233113-239b-4c3c-956d-39d352cab6a6",
+      "target_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "description": "Threat actor uses T1046"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9b95da01-6611-4d29-83ce-7bddd86f00b0",
+      "created": "2026-02-15T20:20:35.762219+00:00",
+      "modified": "2026-02-15T20:20:35.762220+00:00",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--71233113-239b-4c3c-956d-39d352cab6a6",
+      "target_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "description": "Threat actor uses T1210"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0789906f-6729-4291-b26d-b3baf71d0245",
+      "created": "2026-02-15T20:20:35.762224+00:00",
+      "modified": "2026-02-15T20:20:35.762225+00:00",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--71233113-239b-4c3c-956d-39d352cab6a6",
+      "target_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "description": "Threat actor uses T1068"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--877ca6be-a129-447f-83cb-290c579b92d3",
+      "created": "2026-02-15T20:20:35.762227+00:00",
+      "modified": "2026-02-15T20:20:35.762228+00:00",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--71233113-239b-4c3c-956d-39d352cab6a6",
+      "target_ref": "attack-pattern--99f546ae-14e5-47d4-a80e-e268eee18d63",
+      "description": "Threat actor uses T1489"
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8295e546-9333-4fd8-b255-377f29136d0d",
+      "created": "2026-02-15T20:20:35.762231+00:00",
+      "modified": "2026-02-15T20:20:35.762232+00:00",
+      "name": "Network Monitoring",
+      "description": "Blue agent performs network-wide monitoring to detect anomalous activity",
+      "x_action_type": "detection"
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--2207ae37-6dab-4ce0-a691-e34742526dac",
+      "created": "2026-02-15T20:20:35.762236+00:00",
+      "modified": "2026-02-15T20:20:35.762237+00:00",
+      "name": "Host Analysis",
+      "description": "Blue agent performs deep analysis on specific host for compromise indicators",
+      "x_action_type": "detection"
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5649a619-8cac-4e85-a567-5a2bd4f35b7f",
+      "created": "2026-02-15T20:20:35.762240+00:00",
+      "modified": "2026-02-15T20:20:35.762241+00:00",
+      "name": "Malware Removal",
+      "description": "Blue agent kills malicious processes and removes adversary sessions",
+      "x_action_type": "containment"
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--0b7a665a-11a1-44e4-a6cc-c6c704202007",
+      "created": "2026-02-15T20:20:35.762244+00:00",
+      "modified": "2026-02-15T20:20:35.762244+00:00",
+      "name": "System Restore",
+      "description": "Blue agent performs full host restoration to clean state",
+      "x_action_type": "recovery"
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--907ccea8-a977-48ca-bb2d-f13d426d324b",
+      "created": "2026-02-15T20:20:35.762247+00:00",
+      "modified": "2026-02-15T20:20:35.762248+00:00",
+      "name": "Network Segmentation (M1030)",
+      "description": "Blue agent isolates host from network to prevent lateral movement",
+      "x_action_type": "containment",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "M1030",
+          "url": "https://attack.mitre.org/mitigations/M1030/"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c1105835-4217-42bf-ac63-b9ab8ca4fcbb",
+      "created": "2026-02-15T20:20:35.762252+00:00",
+      "modified": "2026-02-15T20:20:35.762252+00:00",
+      "name": "Update Software (M1051)",
+      "description": "Blue agent patches vulnerability on host proactively",
+      "x_action_type": "prevention",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "M1051",
+          "url": "https://attack.mitre.org/mitigations/M1051/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--35b002e5-4731-4e24-8ab7-4ecdf09debbd",
+      "created": "2026-02-15T20:20:35.762257+00:00",
+      "modified": "2026-02-15T20:20:35.762258+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--8295e546-9333-4fd8-b255-377f29136d0d",
+      "target_ref": "attack-pattern--5e203620-9608-4dab-9b29-ebcfefd26f7a",
+      "description": ""
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e8794a88-3c76-4ed5-8187-c78be18fca3f",
+      "created": "2026-02-15T20:20:35.762262+00:00",
+      "modified": "2026-02-15T20:20:35.762263+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--8295e546-9333-4fd8-b255-377f29136d0d",
+      "target_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "description": ""
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9d5ba1d4-7a2d-4353-8dcf-a811d93a13f4",
+      "created": "2026-02-15T20:20:35.762265+00:00",
+      "modified": "2026-02-15T20:20:35.762266+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--2207ae37-6dab-4ce0-a691-e34742526dac",
+      "target_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "description": ""
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d225a4c5-b878-45b3-8b0a-27030e125386",
+      "created": "2026-02-15T20:20:35.762269+00:00",
+      "modified": "2026-02-15T20:20:35.762270+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--2207ae37-6dab-4ce0-a691-e34742526dac",
+      "target_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "description": ""
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--48d3b577-5faa-4449-9c33-e8466c22f8e9",
+      "created": "2026-02-15T20:20:35.762273+00:00",
+      "modified": "2026-02-15T20:20:35.762274+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--5649a619-8cac-4e85-a567-5a2bd4f35b7f",
+      "target_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "description": ""
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b537155b-50ac-4b27-9ceb-3e57b65e2335",
+      "created": "2026-02-15T20:20:35.762277+00:00",
+      "modified": "2026-02-15T20:20:35.762278+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--5649a619-8cac-4e85-a567-5a2bd4f35b7f",
+      "target_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "description": ""
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--32a5cde8-6d7c-4b10-9648-17e0f5f0f3ac",
+      "created": "2026-02-15T20:20:35.762281+00:00",
+      "modified": "2026-02-15T20:20:35.762282+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--0b7a665a-11a1-44e4-a6cc-c6c704202007",
+      "target_ref": "attack-pattern--99f546ae-14e5-47d4-a80e-e268eee18d63",
+      "description": ""
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f141b1aa-b743-497e-b16b-e6d1af8ff4d8",
+      "created": "2026-02-15T20:20:35.762284+00:00",
+      "modified": "2026-02-15T20:20:35.762285+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--0b7a665a-11a1-44e4-a6cc-c6c704202007",
+      "target_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "description": ""
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0a9b9c66-be4f-4152-80c5-cf5481b806ab",
+      "created": "2026-02-15T20:20:35.762288+00:00",
+      "modified": "2026-02-15T20:20:35.762289+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--907ccea8-a977-48ca-bb2d-f13d426d324b",
+      "target_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "description": ""
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4502fcdb-cf32-443a-a08c-7bb2066ac0a5",
+      "created": "2026-02-15T20:20:35.762292+00:00",
+      "modified": "2026-02-15T20:20:35.762293+00:00",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--c1105835-4217-42bf-ac63-b9ab8ca4fcbb",
+      "target_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "description": ""
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--2dbe5436-4e72-44fa-b5eb-caa92e20ec15",
+      "created": "2026-02-15T20:20:35.762296+00:00",
+      "modified": "2026-02-15T20:20:35.762297+00:00",
+      "name": "Detection for Remote System Discovery",
+      "description": "Indicator pattern for detecting T1018 (Remote System Discovery) in simulated environment",
+      "indicator_types": [
+        "anomalous-activity"
+      ],
+      "pattern": "[network-traffic:extensions.'tcp'.dst_port = 0]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-15T20:20:35.762299+00:00",
+      "confidence": 85,
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1018"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--4192be7e-971b-4dbb-8231-d14dc7b69a87",
+      "created": "2026-02-15T20:20:35.762303+00:00",
+      "modified": "2026-02-15T20:20:35.762304+00:00",
+      "name": "Detection for Network Service Scanning",
+      "description": "Indicator pattern for detecting T1046 (Network Service Scanning) in simulated environment",
+      "indicator_types": [
+        "anomalous-activity"
+      ],
+      "pattern": "[network-traffic:extensions.'tcp'.dst_port = 0]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-15T20:20:35.762305+00:00",
+      "confidence": 85,
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6bef31d5-4b89-49ff-abf3-bb85067b1000",
+      "created": "2026-02-15T20:20:35.762308+00:00",
+      "modified": "2026-02-15T20:20:35.762309+00:00",
+      "name": "Detection for Exploitation of Remote Services",
+      "description": "Indicator pattern for detecting T1210 (Exploitation of Remote Services) in simulated environment",
+      "indicator_types": [
+        "anomalous-activity"
+      ],
+      "pattern": "[network-traffic:extensions.'tcp'.dst_port = 0]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-15T20:20:35.762309+00:00",
+      "confidence": 85,
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1210"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ba3e65c2-9f32-4a17-a8c9-0792512a11ba",
+      "created": "2026-02-15T20:20:35.762312+00:00",
+      "modified": "2026-02-15T20:20:35.762313+00:00",
+      "name": "Detection for Exploitation for Privilege Escalation",
+      "description": "Indicator pattern for detecting T1068 (Exploitation for Privilege Escalation) in simulated environment",
+      "indicator_types": [
+        "anomalous-activity"
+      ],
+      "pattern": "[network-traffic:extensions.'tcp'.dst_port = 0]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-15T20:20:35.762314+00:00",
+      "confidence": 85,
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--530f9dd8-574b-4750-bf34-ec15a8b2a88d",
+      "created": "2026-02-15T20:20:35.762317+00:00",
+      "modified": "2026-02-15T20:20:35.762318+00:00",
+      "name": "Detection for Service Stop",
+      "description": "Indicator pattern for detecting T1489 (Service Stop) in simulated environment",
+      "indicator_types": [
+        "anomalous-activity"
+      ],
+      "pattern": "[network-traffic:extensions.'tcp'.dst_port = 0]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-15T20:20:35.762319+00:00",
+      "confidence": 85,
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1489"
+        }
+      ]
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--92ccf505-fb11-4a73-8d8e-0f8ea7cfc55e",
+      "created": "2026-02-15T20:20:35.960209+00:00",
+      "modified": "2026-02-15T20:20:35.960213+00:00",
+      "first_observed": "2026-02-15T10:00:00+00:00",
+      "last_observed": "2026-02-15T10:00:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 0,
+      "x_red_action": "DiscoverRemoteSystems (T1018)",
+      "x_blue_action": "Patch Op_Host1",
+      "x_target_host": "Op_Host1",
+      "x_reward": 0.5,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverRemoteSystems 10.0.185.240/28",
+        "red_target_host": null,
+        "red_technique_id": "T1018",
+        "red_technique_name": "Remote System Discovery",
+        "compromised_hosts": [],
+        "isolated": 0,
+        "patched": 0
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--9d975294-584e-443b-bb2d-12856aebf4d5",
+      "created": "2026-02-15T20:20:35.960221+00:00",
+      "modified": "2026-02-15T20:20:35.960223+00:00",
+      "first_seen": "2026-02-15T10:00:00+00:00",
+      "last_seen": "2026-02-15T10:00:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--5e203620-9608-4dab-9b29-ebcfefd26f7a",
+      "where_sighted_refs": [
+        "infrastructure--18bda990-6ce4-453c-9384-a9837c778769"
+      ],
+      "x_simulation_step": 0
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--90d133e5-7448-4266-90b1-03958178fd73",
+      "created": "2026-02-15T20:20:35.962063+00:00",
+      "modified": "2026-02-15T20:20:35.962065+00:00",
+      "first_observed": "2026-02-15T10:01:00+00:00",
+      "last_observed": "2026-02-15T10:01:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 1,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Patch Op_Host1",
+      "x_target_host": "Op_Host1",
+      "x_reward": 0.0,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.185.248",
+        "red_target_host": "User0",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [],
+        "isolated": 0,
+        "patched": 1
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--7e8a1d0f-6343-433c-8d55-9dcb897e39b3",
+      "created": "2026-02-15T20:20:35.962071+00:00",
+      "modified": "2026-02-15T20:20:35.962073+00:00",
+      "first_seen": "2026-02-15T10:01:00+00:00",
+      "last_seen": "2026-02-15T10:01:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--18bda990-6ce4-453c-9384-a9837c778769"
+      ],
+      "x_simulation_step": 1
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--690efafc-a219-434d-bdd3-91bca011dfb4",
+      "created": "2026-02-15T20:20:35.963697+00:00",
+      "modified": "2026-02-15T20:20:35.963699+00:00",
+      "first_observed": "2026-02-15T10:02:00+00:00",
+      "last_observed": "2026-02-15T10:02:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 2,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Patch Research0",
+      "x_target_host": "Research0",
+      "x_reward": 0.5,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.185.250",
+        "red_target_host": "User1",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [],
+        "isolated": 0,
+        "patched": 1
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--4dfa46ca-c1dd-4181-b800-f4a24538c5d8",
+      "created": "2026-02-15T20:20:35.963705+00:00",
+      "modified": "2026-02-15T20:20:35.963706+00:00",
+      "first_seen": "2026-02-15T10:02:00+00:00",
+      "last_seen": "2026-02-15T10:02:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--3f23b299-0af8-4558-83e1-7daa356279b3"
+      ],
+      "x_simulation_step": 2
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--19dd0134-f410-468a-a863-f7de41257b73",
+      "created": "2026-02-15T20:20:35.965288+00:00",
+      "modified": "2026-02-15T20:20:35.965290+00:00",
+      "first_observed": "2026-02-15T10:03:00+00:00",
+      "last_observed": "2026-02-15T10:03:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 3,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Patch Research0",
+      "x_target_host": "Research0",
+      "x_reward": 0.0,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.185.242",
+        "red_target_host": "User2",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [],
+        "isolated": 0,
+        "patched": 2
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--239d9f1c-21c6-4ccc-a6f8-e06225fbe80e",
+      "created": "2026-02-15T20:20:35.965296+00:00",
+      "modified": "2026-02-15T20:20:35.965297+00:00",
+      "first_seen": "2026-02-15T10:03:00+00:00",
+      "last_seen": "2026-02-15T10:03:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--76e1fa91-d187-44d3-bea9-73e3c918e2a5"
+      ],
+      "x_simulation_step": 3
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--3e40130e-f6e5-4d32-86c2-2bcc0214bd6f",
+      "created": "2026-02-15T20:20:35.966830+00:00",
+      "modified": "2026-02-15T20:20:35.966832+00:00",
+      "first_observed": "2026-02-15T10:04:00+00:00",
+      "last_observed": "2026-02-15T10:04:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 4,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Patch Enterprise0",
+      "x_target_host": "Enterprise0",
+      "x_reward": 0.5,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.185.249",
+        "red_target_host": "User3",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [],
+        "isolated": 0,
+        "patched": 2
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--9b4594ea-66f8-4f1e-b3df-d7f391cff9b7",
+      "created": "2026-02-15T20:20:35.966838+00:00",
+      "modified": "2026-02-15T20:20:35.966839+00:00",
+      "first_seen": "2026-02-15T10:04:00+00:00",
+      "last_seen": "2026-02-15T10:04:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--c2d8f921-edde-48a6-a659-20b013998679"
+      ],
+      "x_simulation_step": 4
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--a4dc4283-502a-4f82-a1fc-82047c4b031a",
+      "created": "2026-02-15T20:20:35.968381+00:00",
+      "modified": "2026-02-15T20:20:35.968383+00:00",
+      "first_observed": "2026-02-15T10:05:00+00:00",
+      "last_observed": "2026-02-15T10:05:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 5,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Patch Enterprise0",
+      "x_target_host": "Enterprise0",
+      "x_reward": 0.0,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.185.245",
+        "red_target_host": "User4",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [],
+        "isolated": 0,
+        "patched": 3
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--85e94d1b-3af0-47c3-9790-9f9a81ea7ca0",
+      "created": "2026-02-15T20:20:35.968388+00:00",
+      "modified": "2026-02-15T20:20:35.968389+00:00",
+      "first_seen": "2026-02-15T10:05:00+00:00",
+      "last_seen": "2026-02-15T10:05:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--e7ec2fc2-ea5b-4459-a302-43298628eaab"
+      ],
+      "x_simulation_step": 5
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--bc5c762a-a2fe-44f0-a4cc-1dd35790f61c",
+      "created": "2026-02-15T20:20:35.969965+00:00",
+      "modified": "2026-02-15T20:20:35.969967+00:00",
+      "first_observed": "2026-02-15T10:06:00+00:00",
+      "last_observed": "2026-02-15T10:06:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 6,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Patch User1",
+      "x_target_host": "User1",
+      "x_reward": 0.5,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.185.241",
+        "red_target_host": "User5",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [],
+        "isolated": 0,
+        "patched": 3
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--7ea90eef-8605-4a8f-9252-a985e75263f3",
+      "created": "2026-02-15T20:20:35.969974+00:00",
+      "modified": "2026-02-15T20:20:35.969975+00:00",
+      "first_seen": "2026-02-15T10:06:00+00:00",
+      "last_seen": "2026-02-15T10:06:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--8adc15c1-6623-4fd1-add9-f7455304d075"
+      ],
+      "x_simulation_step": 6
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--168002ce-cbc9-4395-9178-ed350e39a131",
+      "created": "2026-02-15T20:20:35.971533+00:00",
+      "modified": "2026-02-15T20:20:35.971536+00:00",
+      "first_observed": "2026-02-15T10:07:00+00:00",
+      "last_observed": "2026-02-15T10:07:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 7,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Patch User1",
+      "x_target_host": "User1",
+      "x_reward": 0.0,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.185.252",
+        "red_target_host": "User6",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [],
+        "isolated": 0,
+        "patched": 4
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--84332810-62e2-4b8e-9685-5554adc5416a",
+      "created": "2026-02-15T20:20:35.971541+00:00",
+      "modified": "2026-02-15T20:20:35.971542+00:00",
+      "first_seen": "2026-02-15T10:07:00+00:00",
+      "last_seen": "2026-02-15T10:07:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--1889e313-c108-49b9-a15a-d4865b1f9e0f"
+      ],
+      "x_simulation_step": 7
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--056cccff-41c4-4e29-acde-b3f12d7b157c",
+      "created": "2026-02-15T20:20:35.973097+00:00",
+      "modified": "2026-02-15T20:20:35.973098+00:00",
+      "first_observed": "2026-02-15T10:08:00+00:00",
+      "last_observed": "2026-02-15T10:08:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 8,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Patch DMZ_Server0",
+      "x_target_host": "DMZ_Server0",
+      "x_reward": 0.5,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User0",
+        "red_target_host": "User0",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [],
+        "isolated": 0,
+        "patched": 4
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--95629932-3e57-4c07-8f93-9e9d082f85ac",
+      "created": "2026-02-15T20:20:35.973104+00:00",
+      "modified": "2026-02-15T20:20:35.973105+00:00",
+      "first_seen": "2026-02-15T10:08:00+00:00",
+      "last_seen": "2026-02-15T10:08:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--18bda990-6ce4-453c-9384-a9837c778769"
+      ],
+      "x_simulation_step": 8
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--5917f3eb-a135-4d42-ab86-f3684ad122a4",
+      "created": "2026-02-15T20:20:35.974748+00:00",
+      "modified": "2026-02-15T20:20:35.974757+00:00",
+      "first_observed": "2026-02-15T10:09:00+00:00",
+      "last_observed": "2026-02-15T10:09:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 9,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Patch DMZ_Server0",
+      "x_target_host": "DMZ_Server0",
+      "x_reward": 0.0,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.185.248",
+        "red_target_host": "User0",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "User0"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--dc555e0c-7e15-45dc-9044-53d0f0ba40c2",
+      "created": "2026-02-15T20:20:35.974763+00:00",
+      "modified": "2026-02-15T20:20:35.974765+00:00",
+      "first_seen": "2026-02-15T10:09:00+00:00",
+      "last_seen": "2026-02-15T10:09:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--18bda990-6ce4-453c-9384-a9837c778769"
+      ],
+      "x_simulation_step": 9
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--ce04d39f-b77c-4701-8f58-29277c82ae06",
+      "created": "2026-02-15T20:20:35.976472+00:00",
+      "modified": "2026-02-15T20:20:35.976475+00:00",
+      "first_observed": "2026-02-15T10:10:00+00:00",
+      "last_observed": "2026-02-15T10:10:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 10,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -1.0,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.185.250",
+        "red_target_host": "User1",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--8a8075e4-1c33-48e3-89c0-86a80dd56615",
+      "created": "2026-02-15T20:20:35.976480+00:00",
+      "modified": "2026-02-15T20:20:35.976481+00:00",
+      "first_seen": "2026-02-15T10:10:00+00:00",
+      "last_seen": "2026-02-15T10:10:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--3f23b299-0af8-4558-83e1-7daa356279b3"
+      ],
+      "x_simulation_step": 10
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--b4139f3e-112b-4fa8-b3a5-adb6e792b98b",
+      "created": "2026-02-15T20:20:35.978146+00:00",
+      "modified": "2026-02-15T20:20:35.978148+00:00",
+      "first_observed": "2026-02-15T10:11:00+00:00",
+      "last_observed": "2026-02-15T10:11:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 11,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -1.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User1",
+        "red_target_host": "User1",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--fec6dbc0-7c6e-4cba-bb4c-fd89c3e20912",
+      "created": "2026-02-15T20:20:35.978153+00:00",
+      "modified": "2026-02-15T20:20:35.978154+00:00",
+      "first_seen": "2026-02-15T10:11:00+00:00",
+      "last_seen": "2026-02-15T10:11:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--3f23b299-0af8-4558-83e1-7daa356279b3"
+      ],
+      "x_simulation_step": 11
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--a4a887c2-0cb4-4217-9068-e0d573f47a50",
+      "created": "2026-02-15T20:20:35.979916+00:00",
+      "modified": "2026-02-15T20:20:35.979919+00:00",
+      "first_observed": "2026-02-15T10:12:00+00:00",
+      "last_observed": "2026-02-15T10:12:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 12,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -1.1,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.92.138",
+        "red_target_host": "Enterprise1",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--ba878d54-6a91-4b6e-94eb-46f01220b4ca",
+      "created": "2026-02-15T20:20:35.979925+00:00",
+      "modified": "2026-02-15T20:20:35.979926+00:00",
+      "first_seen": "2026-02-15T10:12:00+00:00",
+      "last_seen": "2026-02-15T10:12:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--50cc6224-be95-47ee-a57a-61c5c5fbc0e8"
+      ],
+      "x_simulation_step": 12
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--b482b820-f683-4bb6-b3dd-7536803d7e0d",
+      "created": "2026-02-15T20:20:35.981618+00:00",
+      "modified": "2026-02-15T20:20:35.981620+00:00",
+      "first_observed": "2026-02-15T10:13:00+00:00",
+      "last_observed": "2026-02-15T10:13:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 13,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -1.1,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.92.138",
+        "red_target_host": "Enterprise1",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "User0",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--8e991c7e-e1bf-4489-948d-94689dac1be7",
+      "created": "2026-02-15T20:20:35.981625+00:00",
+      "modified": "2026-02-15T20:20:35.981626+00:00",
+      "first_seen": "2026-02-15T10:13:00+00:00",
+      "last_seen": "2026-02-15T10:13:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--50cc6224-be95-47ee-a57a-61c5c5fbc0e8"
+      ],
+      "x_simulation_step": 13
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--2c8665db-0faa-45fd-9838-f8d7dad21f68",
+      "created": "2026-02-15T20:20:35.983316+00:00",
+      "modified": "2026-02-15T20:20:35.983317+00:00",
+      "first_observed": "2026-02-15T10:14:00+00:00",
+      "last_observed": "2026-02-15T10:14:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 14,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate Enterprise1",
+        "red_target_host": "Enterprise1",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "User0",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--795fc245-00dd-41e8-a6bc-e9814c26fd0f",
+      "created": "2026-02-15T20:20:35.983323+00:00",
+      "modified": "2026-02-15T20:20:35.983324+00:00",
+      "first_seen": "2026-02-15T10:14:00+00:00",
+      "last_seen": "2026-02-15T10:14:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--50cc6224-be95-47ee-a57a-61c5c5fbc0e8"
+      ],
+      "x_simulation_step": 14
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--bd764b52-073f-49ce-b42b-be90b51a6ff6",
+      "created": "2026-02-15T20:20:35.984939+00:00",
+      "modified": "2026-02-15T20:20:35.984941+00:00",
+      "first_observed": "2026-02-15T10:15:00+00:00",
+      "last_observed": "2026-02-15T10:15:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 15,
+      "x_red_action": "DiscoverRemoteSystems (T1018)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverRemoteSystems 10.0.92.128/28",
+        "red_target_host": null,
+        "red_technique_id": "T1018",
+        "red_technique_name": "Remote System Discovery",
+        "compromised_hosts": [
+          "User0",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--a0596494-ec8a-4ad8-b7fe-d92c255aab99",
+      "created": "2026-02-15T20:20:35.984946+00:00",
+      "modified": "2026-02-15T20:20:35.984947+00:00",
+      "first_seen": "2026-02-15T10:15:00+00:00",
+      "last_seen": "2026-02-15T10:15:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--5e203620-9608-4dab-9b29-ebcfefd26f7a",
+      "where_sighted_refs": [
+        "infrastructure--18bda990-6ce4-453c-9384-a9837c778769"
+      ],
+      "x_simulation_step": 15
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--186410e5-55b8-4959-a811-5d54941d487d",
+      "created": "2026-02-15T20:20:35.986548+00:00",
+      "modified": "2026-02-15T20:20:35.986549+00:00",
+      "first_observed": "2026-02-15T10:16:00+00:00",
+      "last_observed": "2026-02-15T10:16:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 16,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.92.136",
+        "red_target_host": "Defender",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [
+          "User0",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--74309cee-209a-478d-a59a-2ff9ce7d9e95",
+      "created": "2026-02-15T20:20:35.986555+00:00",
+      "modified": "2026-02-15T20:20:35.986556+00:00",
+      "first_seen": "2026-02-15T10:16:00+00:00",
+      "last_seen": "2026-02-15T10:16:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--bad05992-5e99-45fc-9b5e-2249e62eea72"
+      ],
+      "x_simulation_step": 16
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--c5164c78-93a8-428e-ae6c-fcb92d35013d",
+      "created": "2026-02-15T20:20:35.988175+00:00",
+      "modified": "2026-02-15T20:20:35.988177+00:00",
+      "first_observed": "2026-02-15T10:17:00+00:00",
+      "last_observed": "2026-02-15T10:17:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 17,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.92.132",
+        "red_target_host": "Enterprise0",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [
+          "User0",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--5bf6e45d-df1e-4ad5-a7a1-b69a3afd30a4",
+      "created": "2026-02-15T20:20:35.988183+00:00",
+      "modified": "2026-02-15T20:20:35.988184+00:00",
+      "first_seen": "2026-02-15T10:17:00+00:00",
+      "last_seen": "2026-02-15T10:17:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--c9220b7c-85b6-403a-9732-03127fb2710f"
+      ],
+      "x_simulation_step": 17
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--a226d3e9-0cd8-444b-ac8a-0aa5642d4cd8",
+      "created": "2026-02-15T20:20:35.989845+00:00",
+      "modified": "2026-02-15T20:20:35.989846+00:00",
+      "first_observed": "2026-02-15T10:18:00+00:00",
+      "last_observed": "2026-02-15T10:18:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 18,
+      "x_red_action": "DiscoverNetworkServices (T1046)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "DiscoverNetworkServices 10.0.92.135",
+        "red_target_host": "Enterprise2",
+        "red_technique_id": "T1046",
+        "red_technique_name": "Network Service Scanning",
+        "compromised_hosts": [
+          "User0",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--ea7ac62b-60ec-4089-b627-00f7e5b121d4",
+      "created": "2026-02-15T20:20:35.989852+00:00",
+      "modified": "2026-02-15T20:20:35.989853+00:00",
+      "first_seen": "2026-02-15T10:18:00+00:00",
+      "last_seen": "2026-02-15T10:18:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63f4be26-c39e-4b20-9131-46085a9a4d3f",
+      "where_sighted_refs": [
+        "infrastructure--3d040d8f-d406-4108-81b8-08a516d32918"
+      ],
+      "x_simulation_step": 18
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--66dd2be9-d6d9-4aab-aad6-a79746f435e2",
+      "created": "2026-02-15T20:20:35.991522+00:00",
+      "modified": "2026-02-15T20:20:35.991524+00:00",
+      "first_observed": "2026-02-15T10:19:00+00:00",
+      "last_observed": "2026-02-15T10:19:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 19,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.92.136",
+        "red_target_host": "Defender",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "User0",
+          "Defender",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--ee479bd1-e34f-42f6-9905-2748bd8fbc64",
+      "created": "2026-02-15T20:20:35.991530+00:00",
+      "modified": "2026-02-15T20:20:35.991531+00:00",
+      "first_seen": "2026-02-15T10:19:00+00:00",
+      "last_seen": "2026-02-15T10:19:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--bad05992-5e99-45fc-9b5e-2249e62eea72"
+      ],
+      "x_simulation_step": 19
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--0e4e4802-08de-440e-9f1d-d263e1c84211",
+      "created": "2026-02-15T20:20:35.993130+00:00",
+      "modified": "2026-02-15T20:20:35.993132+00:00",
+      "first_observed": "2026-02-15T10:20:00+00:00",
+      "last_observed": "2026-02-15T10:20:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 20,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate Enterprise1",
+        "red_target_host": "Enterprise1",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "User0",
+          "Defender",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--a2e6d556-468c-40fc-88ee-89f9bce39c52",
+      "created": "2026-02-15T20:20:35.993138+00:00",
+      "modified": "2026-02-15T20:20:35.993139+00:00",
+      "first_seen": "2026-02-15T10:20:00+00:00",
+      "last_seen": "2026-02-15T10:20:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--50cc6224-be95-47ee-a57a-61c5c5fbc0e8"
+      ],
+      "x_simulation_step": 20
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--c983ad1f-9832-4152-a8ea-399356f5502d",
+      "created": "2026-02-15T20:20:35.994961+00:00",
+      "modified": "2026-02-15T20:20:35.994963+00:00",
+      "first_observed": "2026-02-15T10:21:00+00:00",
+      "last_observed": "2026-02-15T10:21:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 21,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User0",
+        "red_target_host": "User0",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "User0",
+          "Defender",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--03767cda-bfa6-49b4-9656-b097f13b3aae",
+      "created": "2026-02-15T20:20:35.994968+00:00",
+      "modified": "2026-02-15T20:20:35.994969+00:00",
+      "first_seen": "2026-02-15T10:21:00+00:00",
+      "last_seen": "2026-02-15T10:21:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--18bda990-6ce4-453c-9384-a9837c778769"
+      ],
+      "x_simulation_step": 21
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--b6d775be-f3b3-464c-8b64-032c64588051",
+      "created": "2026-02-15T20:20:35.996786+00:00",
+      "modified": "2026-02-15T20:20:35.996787+00:00",
+      "first_observed": "2026-02-15T10:22:00+00:00",
+      "last_observed": "2026-02-15T10:22:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 22,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User1",
+        "red_target_host": "User1",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "User0",
+          "Defender",
+          "Enterprise1",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--6a5b161d-ecc5-4356-bc41-5f7408dddbbb",
+      "created": "2026-02-15T20:20:35.996793+00:00",
+      "modified": "2026-02-15T20:20:35.996794+00:00",
+      "first_seen": "2026-02-15T10:22:00+00:00",
+      "last_seen": "2026-02-15T10:22:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--3f23b299-0af8-4558-83e1-7daa356279b3"
+      ],
+      "x_simulation_step": 22
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--3a2531d9-7894-4af6-82cf-ed96538192ba",
+      "created": "2026-02-15T20:20:35.998793+00:00",
+      "modified": "2026-02-15T20:20:35.998795+00:00",
+      "first_observed": "2026-02-15T10:23:00+00:00",
+      "last_observed": "2026-02-15T10:23:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 23,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -2.1,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.92.132",
+        "red_target_host": "Enterprise0",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "Enterprise0",
+          "Defender",
+          "Enterprise1",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--d852fa29-5b13-483c-bb89-0e7dbd67b609",
+      "created": "2026-02-15T20:20:35.998801+00:00",
+      "modified": "2026-02-15T20:20:35.998802+00:00",
+      "first_seen": "2026-02-15T10:23:00+00:00",
+      "last_seen": "2026-02-15T10:23:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--c9220b7c-85b6-403a-9732-03127fb2710f"
+      ],
+      "x_simulation_step": 23
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--7fa0d30a-4184-4948-98c8-29d41de57a8e",
+      "created": "2026-02-15T20:20:36.000486+00:00",
+      "modified": "2026-02-15T20:20:36.000488+00:00",
+      "first_observed": "2026-02-15T10:24:00+00:00",
+      "last_observed": "2026-02-15T10:24:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 24,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate Enterprise0",
+        "red_target_host": "Enterprise0",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "Defender",
+          "Enterprise1",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--c890a16c-f673-4743-bbae-5bb0c3546992",
+      "created": "2026-02-15T20:20:36.000494+00:00",
+      "modified": "2026-02-15T20:20:36.000495+00:00",
+      "first_seen": "2026-02-15T10:24:00+00:00",
+      "last_seen": "2026-02-15T10:24:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--c9220b7c-85b6-403a-9732-03127fb2710f"
+      ],
+      "x_simulation_step": 24
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--11139d13-7f5e-47df-8aa9-39c866f964ed",
+      "created": "2026-02-15T20:20:36.002082+00:00",
+      "modified": "2026-02-15T20:20:36.002085+00:00",
+      "first_observed": "2026-02-15T10:25:00+00:00",
+      "last_observed": "2026-02-15T10:25:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 25,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.1,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.92.135",
+        "red_target_host": "Enterprise2",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "Enterprise0",
+          "Defender",
+          "Enterprise1",
+          "Enterprise2",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--c823c232-296b-456e-a9fd-64e693c4a3fa",
+      "created": "2026-02-15T20:20:36.002090+00:00",
+      "modified": "2026-02-15T20:20:36.002091+00:00",
+      "first_seen": "2026-02-15T10:25:00+00:00",
+      "last_seen": "2026-02-15T10:25:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--3d040d8f-d406-4108-81b8-08a516d32918"
+      ],
+      "x_simulation_step": 25
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--e998cc4c-b674-4c4e-9483-b6fa03e03a2d",
+      "created": "2026-02-15T20:20:36.003697+00:00",
+      "modified": "2026-02-15T20:20:36.003699+00:00",
+      "first_observed": "2026-02-15T10:26:00+00:00",
+      "last_observed": "2026-02-15T10:26:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 26,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate Enterprise0",
+        "red_target_host": "Enterprise0",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "Defender",
+          "Enterprise1",
+          "Enterprise2",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--3b9ac570-31b4-45f7-979d-65e841cff1dd",
+      "created": "2026-02-15T20:20:36.003704+00:00",
+      "modified": "2026-02-15T20:20:36.003705+00:00",
+      "first_seen": "2026-02-15T10:26:00+00:00",
+      "last_seen": "2026-02-15T10:26:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--c9220b7c-85b6-403a-9732-03127fb2710f"
+      ],
+      "x_simulation_step": 26
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--93fad197-e7d9-4d96-8b66-0fc288ff4227",
+      "created": "2026-02-15T20:20:36.005276+00:00",
+      "modified": "2026-02-15T20:20:36.005278+00:00",
+      "first_observed": "2026-02-15T10:27:00+00:00",
+      "last_observed": "2026-02-15T10:27:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 27,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate Enterprise1",
+        "red_target_host": "Enterprise1",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "Defender",
+          "Enterprise1",
+          "Enterprise2",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--8e604902-8fb7-4ea3-a703-3aaf169b7e79",
+      "created": "2026-02-15T20:20:36.005283+00:00",
+      "modified": "2026-02-15T20:20:36.005284+00:00",
+      "first_seen": "2026-02-15T10:27:00+00:00",
+      "last_seen": "2026-02-15T10:27:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--50cc6224-be95-47ee-a57a-61c5c5fbc0e8"
+      ],
+      "x_simulation_step": 27
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--a618f3e0-2156-496d-b0c5-d0f95fbca94a",
+      "created": "2026-02-15T20:20:36.006865+00:00",
+      "modified": "2026-02-15T20:20:36.006867+00:00",
+      "first_observed": "2026-02-15T10:28:00+00:00",
+      "last_observed": "2026-02-15T10:28:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 28,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User0",
+        "red_target_host": "User0",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "Defender",
+          "Enterprise1",
+          "Enterprise2",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--b33e0b40-3e34-4a66-9a4a-94d901efdac4",
+      "created": "2026-02-15T20:20:36.006874+00:00",
+      "modified": "2026-02-15T20:20:36.006875+00:00",
+      "first_seen": "2026-02-15T10:28:00+00:00",
+      "last_seen": "2026-02-15T10:28:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--18bda990-6ce4-453c-9384-a9837c778769"
+      ],
+      "x_simulation_step": 28
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--c5cff23a-84f9-4912-810b-f7f2e020161f",
+      "created": "2026-02-15T20:20:36.008493+00:00",
+      "modified": "2026-02-15T20:20:36.008496+00:00",
+      "first_observed": "2026-02-15T10:29:00+00:00",
+      "last_observed": "2026-02-15T10:29:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 29,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.1,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User1",
+        "red_target_host": "User1",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "Defender",
+          "Enterprise1",
+          "Enterprise2",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--78e47efd-d835-429d-bfa6-5b29ebac30b7",
+      "created": "2026-02-15T20:20:36.008501+00:00",
+      "modified": "2026-02-15T20:20:36.008502+00:00",
+      "first_seen": "2026-02-15T10:29:00+00:00",
+      "last_seen": "2026-02-15T10:29:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--3f23b299-0af8-4558-83e1-7daa356279b3"
+      ],
+      "x_simulation_step": 29
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--d4875529-7dbc-4b1e-b77e-8590ce38a5a8",
+      "created": "2026-02-15T20:20:36.010165+00:00",
+      "modified": "2026-02-15T20:20:36.010167+00:00",
+      "first_observed": "2026-02-15T10:30:00+00:00",
+      "last_observed": "2026-02-15T10:30:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 30,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.2,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.185.242",
+        "red_target_host": "User2",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "Enterprise2",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--60d0227a-8faa-4fa4-ac60-ccb2141f1f44",
+      "created": "2026-02-15T20:20:36.010172+00:00",
+      "modified": "2026-02-15T20:20:36.010173+00:00",
+      "first_seen": "2026-02-15T10:30:00+00:00",
+      "last_seen": "2026-02-15T10:30:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--76e1fa91-d187-44d3-bea9-73e3c918e2a5"
+      ],
+      "x_simulation_step": 30
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--39444278-1c29-459a-91d6-7eb95adfa1db",
+      "created": "2026-02-15T20:20:36.011804+00:00",
+      "modified": "2026-02-15T20:20:36.011805+00:00",
+      "first_observed": "2026-02-15T10:31:00+00:00",
+      "last_observed": "2026-02-15T10:31:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 31,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.2,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User2",
+        "red_target_host": "User2",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "Enterprise2",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--d16bc7a6-9705-4745-acae-750263382160",
+      "created": "2026-02-15T20:20:36.011810+00:00",
+      "modified": "2026-02-15T20:20:36.011812+00:00",
+      "first_seen": "2026-02-15T10:31:00+00:00",
+      "last_seen": "2026-02-15T10:31:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--76e1fa91-d187-44d3-bea9-73e3c918e2a5"
+      ],
+      "x_simulation_step": 31
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--c6df2f33-5d65-4ca9-bce1-7bdbe3915fde",
+      "created": "2026-02-15T20:20:36.013522+00:00",
+      "modified": "2026-02-15T20:20:36.013524+00:00",
+      "first_observed": "2026-02-15T10:32:00+00:00",
+      "last_observed": "2026-02-15T10:32:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 32,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.2,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.185.249",
+        "red_target_host": "User3",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "Enterprise2",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--ff931405-76ca-4ab2-9847-7809fd5f9d3c",
+      "created": "2026-02-15T20:20:36.013529+00:00",
+      "modified": "2026-02-15T20:20:36.013530+00:00",
+      "first_seen": "2026-02-15T10:32:00+00:00",
+      "last_seen": "2026-02-15T10:32:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--c2d8f921-edde-48a6-a659-20b013998679"
+      ],
+      "x_simulation_step": 32
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--9bd79a37-810f-4204-92b2-94b5d3a316f4",
+      "created": "2026-02-15T20:20:36.015191+00:00",
+      "modified": "2026-02-15T20:20:36.015193+00:00",
+      "first_observed": "2026-02-15T10:33:00+00:00",
+      "last_observed": "2026-02-15T10:33:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 33,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.3,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User3",
+        "red_target_host": "User3",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "Enterprise2",
+          "User0",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--c3f822cf-902a-4f83-bddc-fafff98d8b23",
+      "created": "2026-02-15T20:20:36.015198+00:00",
+      "modified": "2026-02-15T20:20:36.015199+00:00",
+      "first_seen": "2026-02-15T10:33:00+00:00",
+      "last_seen": "2026-02-15T10:33:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--c2d8f921-edde-48a6-a659-20b013998679"
+      ],
+      "x_simulation_step": 33
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--da7dae13-0143-4c9a-bb80-3c1e4d9854fb",
+      "created": "2026-02-15T20:20:36.016951+00:00",
+      "modified": "2026-02-15T20:20:36.016953+00:00",
+      "first_observed": "2026-02-15T10:34:00+00:00",
+      "last_observed": "2026-02-15T10:34:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 34,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.3,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.185.245",
+        "red_target_host": "User4",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--92a22603-e6f1-4ad9-9e76-da28dac84268",
+      "created": "2026-02-15T20:20:36.016959+00:00",
+      "modified": "2026-02-15T20:20:36.016959+00:00",
+      "first_seen": "2026-02-15T10:34:00+00:00",
+      "last_seen": "2026-02-15T10:34:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--e7ec2fc2-ea5b-4459-a302-43298628eaab"
+      ],
+      "x_simulation_step": 34
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--0aaf00c9-938c-4ab6-85f4-f835ac09da3c",
+      "created": "2026-02-15T20:20:36.018585+00:00",
+      "modified": "2026-02-15T20:20:36.018587+00:00",
+      "first_observed": "2026-02-15T10:35:00+00:00",
+      "last_observed": "2026-02-15T10:35:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 35,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.4,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User4",
+        "red_target_host": "User4",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--9db9b412-03e7-46c8-a6a6-23d7c4d79eee",
+      "created": "2026-02-15T20:20:36.018593+00:00",
+      "modified": "2026-02-15T20:20:36.018594+00:00",
+      "first_seen": "2026-02-15T10:35:00+00:00",
+      "last_seen": "2026-02-15T10:35:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--e7ec2fc2-ea5b-4459-a302-43298628eaab"
+      ],
+      "x_simulation_step": 35
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--1e510a67-6a54-4c97-ad8f-58558fde3813",
+      "created": "2026-02-15T20:20:36.020271+00:00",
+      "modified": "2026-02-15T20:20:36.020273+00:00",
+      "first_observed": "2026-02-15T10:36:00+00:00",
+      "last_observed": "2026-02-15T10:36:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 36,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.5,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.185.241",
+        "red_target_host": "User5",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--22b4aa21-8af9-443e-af2c-018670795a6e",
+      "created": "2026-02-15T20:20:36.020278+00:00",
+      "modified": "2026-02-15T20:20:36.020279+00:00",
+      "first_seen": "2026-02-15T10:36:00+00:00",
+      "last_seen": "2026-02-15T10:36:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--8adc15c1-6623-4fd1-add9-f7455304d075"
+      ],
+      "x_simulation_step": 36
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--02db80ba-e062-48ad-a7d7-c395906b8720",
+      "created": "2026-02-15T20:20:36.021926+00:00",
+      "modified": "2026-02-15T20:20:36.021928+00:00",
+      "first_observed": "2026-02-15T10:37:00+00:00",
+      "last_observed": "2026-02-15T10:37:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 37,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.5,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User5",
+        "red_target_host": "User5",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--bdc327ba-56d9-4286-bb61-ea4e24fb40b4",
+      "created": "2026-02-15T20:20:36.021933+00:00",
+      "modified": "2026-02-15T20:20:36.021935+00:00",
+      "first_seen": "2026-02-15T10:37:00+00:00",
+      "last_seen": "2026-02-15T10:37:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--8adc15c1-6623-4fd1-add9-f7455304d075"
+      ],
+      "x_simulation_step": 37
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--d4afcd8f-6386-4b81-914b-56c7f07d8bce",
+      "created": "2026-02-15T20:20:36.023727+00:00",
+      "modified": "2026-02-15T20:20:36.023729+00:00",
+      "first_observed": "2026-02-15T10:38:00+00:00",
+      "last_observed": "2026-02-15T10:38:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 38,
+      "x_red_action": "ExploitRemoteService (T1210)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.5,
+      "x_observation_summary": {
+        "red_action_raw": "ExploitRemoteService 10.0.185.252",
+        "red_target_host": "User6",
+        "red_technique_id": "T1210",
+        "red_technique_name": "Exploitation of Remote Services",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--ed2351c8-1712-4083-9319-2a68ac275639",
+      "created": "2026-02-15T20:20:36.023737+00:00",
+      "modified": "2026-02-15T20:20:36.023738+00:00",
+      "first_seen": "2026-02-15T10:38:00+00:00",
+      "last_seen": "2026-02-15T10:38:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--63208428-3446-4e53-940e-de262bda1a4f",
+      "where_sighted_refs": [
+        "infrastructure--1889e313-c108-49b9-a15a-d4865b1f9e0f"
+      ],
+      "x_simulation_step": 38
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--f27f3b9a-0ae7-44ad-8c7d-855938deb1b5",
+      "created": "2026-02-15T20:20:36.025426+00:00",
+      "modified": "2026-02-15T20:20:36.025428+00:00",
+      "first_observed": "2026-02-15T10:39:00+00:00",
+      "last_observed": "2026-02-15T10:39:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 39,
+      "x_red_action": "PrivilegeEscalate (T1068)",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "PrivilegeEscalate User6",
+        "red_target_host": "User6",
+        "red_technique_id": "T1068",
+        "red_technique_name": "Privilege Escalation",
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--830e0b2e-8907-4e33-8d50-391cf88e6444",
+      "created": "2026-02-15T20:20:36.025435+00:00",
+      "modified": "2026-02-15T20:20:36.025436+00:00",
+      "first_seen": "2026-02-15T10:39:00+00:00",
+      "last_seen": "2026-02-15T10:39:00+00:00",
+      "count": 1,
+      "sighting_of_ref": "attack-pattern--75eb4b85-9722-45ce-bb7e-98eb1b42d7cc",
+      "where_sighted_refs": [
+        "infrastructure--1889e313-c108-49b9-a15a-d4865b1f9e0f"
+      ],
+      "x_simulation_step": 39
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--9498050a-2bd6-44b9-9e7c-98b286a1b6ff",
+      "created": "2026-02-15T20:20:36.027135+00:00",
+      "modified": "2026-02-15T20:20:36.027137+00:00",
+      "first_observed": "2026-02-15T10:40:00+00:00",
+      "last_observed": "2026-02-15T10:40:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 40,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--7599d871-6fcb-4377-b21d-f0733147933d",
+      "created": "2026-02-15T20:20:36.028727+00:00",
+      "modified": "2026-02-15T20:20:36.028729+00:00",
+      "first_observed": "2026-02-15T10:41:00+00:00",
+      "last_observed": "2026-02-15T10:41:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 41,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--9fbfc85a-e714-4052-b3c2-da14da4f9a18",
+      "created": "2026-02-15T20:20:36.030319+00:00",
+      "modified": "2026-02-15T20:20:36.030321+00:00",
+      "first_observed": "2026-02-15T10:42:00+00:00",
+      "last_observed": "2026-02-15T10:42:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 42,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--53f159ef-952a-4af5-9991-e725f1377081",
+      "created": "2026-02-15T20:20:36.032128+00:00",
+      "modified": "2026-02-15T20:20:36.032130+00:00",
+      "first_observed": "2026-02-15T10:43:00+00:00",
+      "last_observed": "2026-02-15T10:43:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 43,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--4fe07914-7ca8-436f-81df-b616cc60cba2",
+      "created": "2026-02-15T20:20:36.033857+00:00",
+      "modified": "2026-02-15T20:20:36.033859+00:00",
+      "first_observed": "2026-02-15T10:44:00+00:00",
+      "last_observed": "2026-02-15T10:44:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 44,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--eeaabe37-2e98-4772-9bbd-3785bfc59788",
+      "created": "2026-02-15T20:20:36.035463+00:00",
+      "modified": "2026-02-15T20:20:36.035465+00:00",
+      "first_observed": "2026-02-15T10:45:00+00:00",
+      "last_observed": "2026-02-15T10:45:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 45,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--c3826319-09d5-43b4-afae-f2eb644983cb",
+      "created": "2026-02-15T20:20:36.037115+00:00",
+      "modified": "2026-02-15T20:20:36.037117+00:00",
+      "first_observed": "2026-02-15T10:46:00+00:00",
+      "last_observed": "2026-02-15T10:46:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 46,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--d0afc8de-d079-400d-8d4e-e7576ad27693",
+      "created": "2026-02-15T20:20:36.038711+00:00",
+      "modified": "2026-02-15T20:20:36.038713+00:00",
+      "first_observed": "2026-02-15T10:47:00+00:00",
+      "last_observed": "2026-02-15T10:47:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 47,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--450f38ba-146d-4262-a644-07e30ff8ba3b",
+      "created": "2026-02-15T20:20:36.040449+00:00",
+      "modified": "2026-02-15T20:20:36.040451+00:00",
+      "first_observed": "2026-02-15T10:48:00+00:00",
+      "last_observed": "2026-02-15T10:48:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 48,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--07029481-c8a4-40b0-92b1-9035adc24e02",
+      "created": "2026-02-15T20:20:36.042131+00:00",
+      "modified": "2026-02-15T20:20:36.042133+00:00",
+      "first_observed": "2026-02-15T10:49:00+00:00",
+      "last_observed": "2026-02-15T10:49:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 49,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--399b8e2e-d8ba-48c2-9be8-376b647b230e",
+      "created": "2026-02-15T20:20:36.043970+00:00",
+      "modified": "2026-02-15T20:20:36.043973+00:00",
+      "first_observed": "2026-02-15T10:50:00+00:00",
+      "last_observed": "2026-02-15T10:50:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 50,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--bb29ab84-3253-442d-afdb-85b34e212997",
+      "created": "2026-02-15T20:20:36.045758+00:00",
+      "modified": "2026-02-15T20:20:36.045760+00:00",
+      "first_observed": "2026-02-15T10:51:00+00:00",
+      "last_observed": "2026-02-15T10:51:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 51,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--bbcdc1f8-0c64-4174-9c5d-299a169822f5",
+      "created": "2026-02-15T20:20:36.047484+00:00",
+      "modified": "2026-02-15T20:20:36.047486+00:00",
+      "first_observed": "2026-02-15T10:52:00+00:00",
+      "last_observed": "2026-02-15T10:52:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 52,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--0c8f6f9e-8e17-4c70-ae85-4b2f7531ae38",
+      "created": "2026-02-15T20:20:36.049119+00:00",
+      "modified": "2026-02-15T20:20:36.049121+00:00",
+      "first_observed": "2026-02-15T10:53:00+00:00",
+      "last_observed": "2026-02-15T10:53:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 53,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--c74964aa-68bc-4b7f-814e-1a3af333d13d",
+      "created": "2026-02-15T20:20:36.050834+00:00",
+      "modified": "2026-02-15T20:20:36.050836+00:00",
+      "first_observed": "2026-02-15T10:54:00+00:00",
+      "last_observed": "2026-02-15T10:54:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 54,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--3dc9bd43-263e-4fad-afde-d971cf263bf8",
+      "created": "2026-02-15T20:20:36.052483+00:00",
+      "modified": "2026-02-15T20:20:36.052485+00:00",
+      "first_observed": "2026-02-15T10:55:00+00:00",
+      "last_observed": "2026-02-15T10:55:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 55,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--a3e690ce-e692-4eb1-a07d-829413c5414b",
+      "created": "2026-02-15T20:20:36.054078+00:00",
+      "modified": "2026-02-15T20:20:36.054080+00:00",
+      "first_observed": "2026-02-15T10:56:00+00:00",
+      "last_observed": "2026-02-15T10:56:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 56,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--5b443818-9b29-4193-94c9-69c717c4d54b",
+      "created": "2026-02-15T20:20:36.055983+00:00",
+      "modified": "2026-02-15T20:20:36.055986+00:00",
+      "first_observed": "2026-02-15T10:57:00+00:00",
+      "last_observed": "2026-02-15T10:57:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 57,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--8369caf7-c810-4670-b7f1-0afd7e7922f2",
+      "created": "2026-02-15T20:20:36.057908+00:00",
+      "modified": "2026-02-15T20:20:36.057910+00:00",
+      "first_observed": "2026-02-15T10:58:00+00:00",
+      "last_observed": "2026-02-15T10:58:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 58,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--71086d9a-b24e-40e9-85ba-59486620a780",
+      "created": "2026-02-15T20:20:36.059624+00:00",
+      "modified": "2026-02-15T20:20:36.059626+00:00",
+      "first_observed": "2026-02-15T10:59:00+00:00",
+      "last_observed": "2026-02-15T10:59:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 59,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--309968d3-9fc7-4eb6-9c2a-6d3141c213c2",
+      "created": "2026-02-15T20:20:36.061241+00:00",
+      "modified": "2026-02-15T20:20:36.061243+00:00",
+      "first_observed": "2026-02-15T11:00:00+00:00",
+      "last_observed": "2026-02-15T11:00:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 60,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--ba54908a-2bab-4e85-af4e-fc8bbb136fa1",
+      "created": "2026-02-15T20:20:36.062857+00:00",
+      "modified": "2026-02-15T20:20:36.062859+00:00",
+      "first_observed": "2026-02-15T11:01:00+00:00",
+      "last_observed": "2026-02-15T11:01:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 61,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--8ca52fab-52bf-4eba-8697-128d39cc1a28",
+      "created": "2026-02-15T20:20:36.064527+00:00",
+      "modified": "2026-02-15T20:20:36.064529+00:00",
+      "first_observed": "2026-02-15T11:02:00+00:00",
+      "last_observed": "2026-02-15T11:02:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 62,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--85e570e3-1768-4c19-9a77-e68686b02ba5",
+      "created": "2026-02-15T20:20:36.066160+00:00",
+      "modified": "2026-02-15T20:20:36.066162+00:00",
+      "first_observed": "2026-02-15T11:03:00+00:00",
+      "last_observed": "2026-02-15T11:03:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 63,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--84ebc7fc-6d04-46e5-96fd-d66c33d16c95",
+      "created": "2026-02-15T20:20:36.067800+00:00",
+      "modified": "2026-02-15T20:20:36.067802+00:00",
+      "first_observed": "2026-02-15T11:04:00+00:00",
+      "last_observed": "2026-02-15T11:04:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 64,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--f1be8400-cd46-4ffc-b366-12435a4d33b7",
+      "created": "2026-02-15T20:20:36.069484+00:00",
+      "modified": "2026-02-15T20:20:36.069486+00:00",
+      "first_observed": "2026-02-15T11:05:00+00:00",
+      "last_observed": "2026-02-15T11:05:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 65,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--39ad1023-8304-435a-aead-7a5052ff1241",
+      "created": "2026-02-15T20:20:36.071159+00:00",
+      "modified": "2026-02-15T20:20:36.071161+00:00",
+      "first_observed": "2026-02-15T11:06:00+00:00",
+      "last_observed": "2026-02-15T11:06:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 66,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--282d7187-9007-48e3-ba35-5834e021b862",
+      "created": "2026-02-15T20:20:36.072804+00:00",
+      "modified": "2026-02-15T20:20:36.072806+00:00",
+      "first_observed": "2026-02-15T11:07:00+00:00",
+      "last_observed": "2026-02-15T11:07:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 67,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--e09e5a7d-9352-4ff9-9f47-645097126a1c",
+      "created": "2026-02-15T20:20:36.074416+00:00",
+      "modified": "2026-02-15T20:20:36.074418+00:00",
+      "first_observed": "2026-02-15T11:08:00+00:00",
+      "last_observed": "2026-02-15T11:08:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 68,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--f7f70be7-6898-46a3-9854-77e9c35ecfcc",
+      "created": "2026-02-15T20:20:36.076029+00:00",
+      "modified": "2026-02-15T20:20:36.076031+00:00",
+      "first_observed": "2026-02-15T11:09:00+00:00",
+      "last_observed": "2026-02-15T11:09:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 69,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--8615bfcf-4f2c-4197-ab19-4d39294a229b",
+      "created": "2026-02-15T20:20:36.077658+00:00",
+      "modified": "2026-02-15T20:20:36.077660+00:00",
+      "first_observed": "2026-02-15T11:10:00+00:00",
+      "last_observed": "2026-02-15T11:10:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 70,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--33505c95-43cc-4235-839a-8fc7a09d61f3",
+      "created": "2026-02-15T20:20:36.079261+00:00",
+      "modified": "2026-02-15T20:20:36.079263+00:00",
+      "first_observed": "2026-02-15T11:11:00+00:00",
+      "last_observed": "2026-02-15T11:11:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 71,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--214f47e8-bd9e-4fe2-9c4a-afaf83bfdbb5",
+      "created": "2026-02-15T20:20:36.080859+00:00",
+      "modified": "2026-02-15T20:20:36.080861+00:00",
+      "first_observed": "2026-02-15T11:12:00+00:00",
+      "last_observed": "2026-02-15T11:12:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 72,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--0934610e-fe20-4659-94ce-db6669b61fa9",
+      "created": "2026-02-15T20:20:36.082515+00:00",
+      "modified": "2026-02-15T20:20:36.082517+00:00",
+      "first_observed": "2026-02-15T11:13:00+00:00",
+      "last_observed": "2026-02-15T11:13:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 73,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--e7249378-0cab-4e0b-a63d-b8ba81790314",
+      "created": "2026-02-15T20:20:36.084220+00:00",
+      "modified": "2026-02-15T20:20:36.084222+00:00",
+      "first_observed": "2026-02-15T11:14:00+00:00",
+      "last_observed": "2026-02-15T11:14:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 74,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--35ee1353-6e4f-4a7c-9ce9-273b123398fa",
+      "created": "2026-02-15T20:20:36.085824+00:00",
+      "modified": "2026-02-15T20:20:36.085825+00:00",
+      "first_observed": "2026-02-15T11:15:00+00:00",
+      "last_observed": "2026-02-15T11:15:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 75,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--f317983e-b09d-4eb3-80f2-109ec1c7f6ec",
+      "created": "2026-02-15T20:20:36.087464+00:00",
+      "modified": "2026-02-15T20:20:36.087466+00:00",
+      "first_observed": "2026-02-15T11:16:00+00:00",
+      "last_observed": "2026-02-15T11:16:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 76,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--a874d355-2120-4028-b470-ac665608520f",
+      "created": "2026-02-15T20:20:36.089084+00:00",
+      "modified": "2026-02-15T20:20:36.089086+00:00",
+      "first_observed": "2026-02-15T11:17:00+00:00",
+      "last_observed": "2026-02-15T11:17:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 77,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--4dd136e5-989b-40f6-b813-1d37c918a227",
+      "created": "2026-02-15T20:20:36.090778+00:00",
+      "modified": "2026-02-15T20:20:36.090780+00:00",
+      "first_observed": "2026-02-15T11:18:00+00:00",
+      "last_observed": "2026-02-15T11:18:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 78,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--c19bf3e1-4b6d-477e-ba13-15528cc852fc",
+      "created": "2026-02-15T20:20:36.092406+00:00",
+      "modified": "2026-02-15T20:20:36.092408+00:00",
+      "first_observed": "2026-02-15T11:19:00+00:00",
+      "last_observed": "2026-02-15T11:19:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 79,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--a85dd896-6f77-4851-8021-2d635e8debe1",
+      "created": "2026-02-15T20:20:36.093997+00:00",
+      "modified": "2026-02-15T20:20:36.093999+00:00",
+      "first_observed": "2026-02-15T11:20:00+00:00",
+      "last_observed": "2026-02-15T11:20:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 80,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--f8b78fab-8ccb-4493-87fc-aff726b5aad3",
+      "created": "2026-02-15T20:20:36.095633+00:00",
+      "modified": "2026-02-15T20:20:36.095635+00:00",
+      "first_observed": "2026-02-15T11:21:00+00:00",
+      "last_observed": "2026-02-15T11:21:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 81,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--a2c2745f-4da0-406e-9896-e8f48112e47c",
+      "created": "2026-02-15T20:20:36.097279+00:00",
+      "modified": "2026-02-15T20:20:36.097281+00:00",
+      "first_observed": "2026-02-15T11:22:00+00:00",
+      "last_observed": "2026-02-15T11:22:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 82,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--e3a67242-c6da-4935-a28d-712221fa3155",
+      "created": "2026-02-15T20:20:36.099502+00:00",
+      "modified": "2026-02-15T20:20:36.099504+00:00",
+      "first_observed": "2026-02-15T11:23:00+00:00",
+      "last_observed": "2026-02-15T11:23:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 83,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--667e00e9-d96a-44ed-b7ad-4626c0f64312",
+      "created": "2026-02-15T20:20:36.101393+00:00",
+      "modified": "2026-02-15T20:20:36.101395+00:00",
+      "first_observed": "2026-02-15T11:24:00+00:00",
+      "last_observed": "2026-02-15T11:24:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 84,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--25dd7c34-6d53-4dfe-928a-1c27dee22dd1",
+      "created": "2026-02-15T20:20:36.103148+00:00",
+      "modified": "2026-02-15T20:20:36.103150+00:00",
+      "first_observed": "2026-02-15T11:25:00+00:00",
+      "last_observed": "2026-02-15T11:25:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 85,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--715f250e-698c-4d68-9d9e-0ff203bdc6bc",
+      "created": "2026-02-15T20:20:36.104796+00:00",
+      "modified": "2026-02-15T20:20:36.104798+00:00",
+      "first_observed": "2026-02-15T11:26:00+00:00",
+      "last_observed": "2026-02-15T11:26:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 86,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--b750c653-ce5a-4b12-a6f3-88b48799e158",
+      "created": "2026-02-15T20:20:36.106412+00:00",
+      "modified": "2026-02-15T20:20:36.106414+00:00",
+      "first_observed": "2026-02-15T11:27:00+00:00",
+      "last_observed": "2026-02-15T11:27:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 87,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--f9e4bdb9-7f49-4ec4-b148-cb0aa5b23e08",
+      "created": "2026-02-15T20:20:36.108009+00:00",
+      "modified": "2026-02-15T20:20:36.108012+00:00",
+      "first_observed": "2026-02-15T11:28:00+00:00",
+      "last_observed": "2026-02-15T11:28:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 88,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--424ca0af-a5b0-409d-aa90-01f839159831",
+      "created": "2026-02-15T20:20:36.109637+00:00",
+      "modified": "2026-02-15T20:20:36.109639+00:00",
+      "first_observed": "2026-02-15T11:29:00+00:00",
+      "last_observed": "2026-02-15T11:29:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 89,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--4b0474e1-1021-44b0-93d4-aac66a876926",
+      "created": "2026-02-15T20:20:36.111249+00:00",
+      "modified": "2026-02-15T20:20:36.111251+00:00",
+      "first_observed": "2026-02-15T11:30:00+00:00",
+      "last_observed": "2026-02-15T11:30:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 90,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--83864911-6f3a-461b-9cf9-7f0fef23d67d",
+      "created": "2026-02-15T20:20:36.112870+00:00",
+      "modified": "2026-02-15T20:20:36.112872+00:00",
+      "first_observed": "2026-02-15T11:31:00+00:00",
+      "last_observed": "2026-02-15T11:31:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 91,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--be62b563-53b0-4e8b-953a-0c1ff947ec2d",
+      "created": "2026-02-15T20:20:36.114532+00:00",
+      "modified": "2026-02-15T20:20:36.114534+00:00",
+      "first_observed": "2026-02-15T11:32:00+00:00",
+      "last_observed": "2026-02-15T11:32:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 92,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--17dd8880-609f-423c-8651-8fb96326839d",
+      "created": "2026-02-15T20:20:36.116291+00:00",
+      "modified": "2026-02-15T20:20:36.116293+00:00",
+      "first_observed": "2026-02-15T11:33:00+00:00",
+      "last_observed": "2026-02-15T11:33:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 93,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--ae8bb129-fdcd-4fc7-8705-2a035cff26fd",
+      "created": "2026-02-15T20:20:36.117960+00:00",
+      "modified": "2026-02-15T20:20:36.117962+00:00",
+      "first_observed": "2026-02-15T11:34:00+00:00",
+      "last_observed": "2026-02-15T11:34:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 94,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--998d602f-8060-4a56-b54a-f4fa7c7a86de",
+      "created": "2026-02-15T20:20:36.119612+00:00",
+      "modified": "2026-02-15T20:20:36.119614+00:00",
+      "first_observed": "2026-02-15T11:35:00+00:00",
+      "last_observed": "2026-02-15T11:35:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 95,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--6595b719-89f5-45df-8426-297e89cc3149",
+      "created": "2026-02-15T20:20:36.121302+00:00",
+      "modified": "2026-02-15T20:20:36.121304+00:00",
+      "first_observed": "2026-02-15T11:36:00+00:00",
+      "last_observed": "2026-02-15T11:36:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 96,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--17a54cab-4791-411d-b362-942ec6458a81",
+      "created": "2026-02-15T20:20:36.122920+00:00",
+      "modified": "2026-02-15T20:20:36.122922+00:00",
+      "first_observed": "2026-02-15T11:37:00+00:00",
+      "last_observed": "2026-02-15T11:37:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 97,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--76004a25-9d8c-45d9-b1d4-bdf3c60459f7",
+      "created": "2026-02-15T20:20:36.124529+00:00",
+      "modified": "2026-02-15T20:20:36.124531+00:00",
+      "first_observed": "2026-02-15T11:38:00+00:00",
+      "last_observed": "2026-02-15T11:38:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 98,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--165f4b17-ed7b-4a14-890a-4acfaa4d85d4",
+      "created": "2026-02-15T20:20:36.126205+00:00",
+      "modified": "2026-02-15T20:20:36.126207+00:00",
+      "first_observed": "2026-02-15T11:39:00+00:00",
+      "last_observed": "2026-02-15T11:39:00+00:00",
+      "number_observed": 1,
+      "x_simulation_step": 99,
+      "x_red_action": "InvalidAction",
+      "x_blue_action": "Restore Op_Server0",
+      "x_target_host": "Op_Server0",
+      "x_reward": -3.6,
+      "x_observation_summary": {
+        "red_action_raw": "InvalidAction",
+        "red_target_host": null,
+        "red_technique_id": null,
+        "red_technique_name": null,
+        "compromised_hosts": [
+          "Enterprise0",
+          "User2",
+          "Defender",
+          "Enterprise1",
+          "User3",
+          "User5",
+          "User6",
+          "Enterprise2",
+          "User0",
+          "User4",
+          "User1"
+        ],
+        "isolated": 0,
+        "patched": 5
+      }
+    }
+  ]
+}
