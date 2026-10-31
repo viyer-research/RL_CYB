@@ -63,12 +63,15 @@ A compact project README describing the repository structure, versioned scenario
 
 | Red profile | DQN (mean ± sd) | Random baseline | Improvement |
 |---|---:|---:|---:|
-| Meander (adaptive) | -319.1 ± 23.5 | -610.6 ± 183.4 | +291.6 |
-| B_line (targeted APT) | -278.8 ± 4.2 | -836.4 ± 389.5 | +557.6 |
-| Sleep (no-op) | -87.5 ± 0.0 | -8.7 ± 0.7 | -78.8 |
-| **Overall** | **-228.4** | **-485.2** | **+256.8** |
+| Meander (adaptive) | -308.5 ± 41.2 | -415.2 ± 236.5 | +106.7 |
+| B_line (targeted APT) | -279.8 ± 3.1 | -784.5 ± 348.9 | +504.8 |
+| Sleep (no-op) | -87.5 ± 0.0 | -13.2 ± 4.4 | -74.3 |
+| Active-adversary mean | -294.2 | -599.9 | +305.7 |
+| **Overall** | **-225.3** | **-404.3** | **+179.0** |
 
-> Interpretation: scaling to 3× changes the optimal policy to a proactive `Patch` → persistent `Restore` loop focused on `Op_Server0`. DQN achieves a ~2.1× improvement over random on active adversaries.
+Mean ± std over 30 episodes per cell (seeds 0–2 × 10 episodes × 100 steps; DQN deterministic). Logs: `eval_logs_a1/table3_3x/`. These replace the earlier 3-episode random baselines.
+
+> Interpretation: the 3× policy runs a fixed `Patch` → `Restore Op_Server0` loop under every profile. It cuts active-adversary penalty by 51.0% vs. random (narrower vs. Meander than vs. B_line) but is 6.6× worse than random with no adversary. Rewards include the wrapper's Isolate/Patch shaping terms (Isolate −0.5 first / −0.1 repeat; Patch +0.5 first; +0.2 per action on an isolated host).
 
 
 ### Key hyperparameters (3× DQN)
@@ -80,8 +83,8 @@ A compact project README describing the repository structure, versioned scenario
 | Discount (γ) | 0.99 |
 | Network | [512, 256, 128] |
 | Replay buffer | 200,000 |
-| ε (exploration) | 1.0 → 0.05 (linear) |
-| Target update | 1,000 steps |
+| ε (exploration) | 1.0 → 0.05 (linear, first 30%) |
+| Target update | 2,000 steps |
 | Training steps | 750,000 |
 
 

@@ -1,0 +1,350 @@
+{
+ "DQN|bline": {
+  "mean": -279.7833333333332,
+  "std": 3.1349729752512516,
+  "n": 30,
+  "per_seed": {
+   "0": [
+    -280.28999999999985,
+    1.9952192861938778
+   ],
+   "1": [
+    -280.5799999999998,
+    2.1268756428150737
+   ],
+   "2": [
+    -278.4799999999998,
+    4.2883096903092595
+   ]
+  },
+  "type_pct": {
+   "Monitor": 0.0,
+   "Analyse": 0.0,
+   "Remove": 0.0,
+   "Restore": 90.0,
+   "Isolate": 0.0,
+   "Patch": 10.0
+  },
+  "top_actions": [
+   [
+    "Restore Op_Server0",
+    2700
+   ],
+   [
+    "Patch Op_Host1",
+    60
+   ],
+   [
+    "Patch Research0",
+    60
+   ],
+   [
+    "Patch Enterprise0",
+    60
+   ],
+   [
+    "Patch User1",
+    60
+   ],
+   [
+    "Patch DMZ_Server0",
+    60
+   ]
+  ],
+  "changes_per_50": 5.0
+ },
+ "DQN|meander": {
+  "mean": -308.52666666666676,
+  "std": 41.237336911536474,
+  "n": 30,
+  "per_seed": {
+   "0": [
+    -326.1900000000001,
+    12.133214743010265
+   ],
+   "1": [
+    -300.52,
+    41.399801931893535
+   ],
+   "2": [
+    -298.87,
+    52.64070763202199
+   ]
+  },
+  "type_pct": {
+   "Monitor": 0.0,
+   "Analyse": 0.0,
+   "Remove": 0.0,
+   "Restore": 90.0,
+   "Isolate": 0.0,
+   "Patch": 10.0
+  },
+  "top_actions": [
+   [
+    "Restore Op_Server0",
+    2700
+   ],
+   [
+    "Patch Op_Host1",
+    60
+   ],
+   [
+    "Patch Research0",
+    60
+   ],
+   [
+    "Patch Enterprise0",
+    60
+   ],
+   [
+    "Patch User1",
+    60
+   ],
+   [
+    "Patch DMZ_Server0",
+    60
+   ]
+  ],
+  "changes_per_50": 5.0
+ },
+ "DQN|sleep": {
+  "mean": -87.5,
+  "std": 0.0,
+  "n": 30,
+  "per_seed": {
+   "0": [
+    -87.5,
+    0.0
+   ],
+   "1": [
+    -87.5,
+    0.0
+   ],
+   "2": [
+    -87.5,
+    0.0
+   ]
+  },
+  "type_pct": {
+   "Monitor": 0.0,
+   "Analyse": 0.0,
+   "Remove": 0.0,
+   "Restore": 90.0,
+   "Isolate": 0.0,
+   "Patch": 10.0
+  },
+  "top_actions": [
+   [
+    "Restore Op_Server0",
+    2700
+   ],
+   [
+    "Patch Op_Host1",
+    60
+   ],
+   [
+    "Patch Research0",
+    60
+   ],
+   [
+    "Patch Enterprise0",
+    60
+   ],
+   [
+    "Patch User1",
+    60
+   ],
+   [
+    "Patch DMZ_Server0",
+    60
+   ]
+  ],
+  "changes_per_50": 5.0
+ },
+ "Random|bline": {
+  "mean": -784.55,
+  "std": 348.9359241560929,
+  "n": 30,
+  "per_seed": {
+   "0": [
+    -754.0099999999999,
+    336.6497629584786
+   ],
+   "1": [
+    -875.8400000000001,
+    307.66564709112396
+   ],
+   "2": [
+    -723.8000000000002,
+    379.8953882320764
+   ]
+  },
+  "type_pct": {
+   "Monitor": 16.1,
+   "Analyse": 16.2,
+   "Remove": 16.8,
+   "Restore": 16.8,
+   "Isolate": 17.4,
+   "Patch": 16.7
+  },
+  "top_actions": [
+   [
+    "Patch DMZ_Server0",
+    42
+   ],
+   [
+    "Isolate Defender",
+    35
+   ],
+   [
+    "Analyse User4",
+    33
+   ],
+   [
+    "Remove User2",
+    33
+   ],
+   [
+    "Patch Research0",
+    33
+   ],
+   [
+    "Remove User6",
+    33
+   ],
+   [
+    "Analyse Enterprise2",
+    33
+   ],
+   [
+    "Remove Enterprise2",
+    33
+   ]
+  ],
+  "changes_per_50": 48.5
+ },
+ "Random|meander": {
+  "mean": -415.20000000000005,
+  "std": 236.54981857246617,
+  "n": 30,
+  "per_seed": {
+   "0": [
+    -388.6,
+    228.11235389605707
+   ],
+   "1": [
+    -463.7800000000002,
+    235.33540235162243
+   ],
+   "2": [
+    -393.21999999999997,
+    238.53460042517932
+   ]
+  },
+  "type_pct": {
+   "Monitor": 16.1,
+   "Analyse": 16.2,
+   "Remove": 16.8,
+   "Restore": 16.8,
+   "Isolate": 17.4,
+   "Patch": 16.7
+  },
+  "top_actions": [
+   [
+    "Patch DMZ_Server0",
+    42
+   ],
+   [
+    "Isolate Defender",
+    35
+   ],
+   [
+    "Analyse User4",
+    33
+   ],
+   [
+    "Remove User2",
+    33
+   ],
+   [
+    "Patch Research0",
+    33
+   ],
+   [
+    "Remove User6",
+    33
+   ],
+   [
+    "Analyse Enterprise2",
+    33
+   ],
+   [
+    "Remove Enterprise2",
+    33
+   ]
+  ],
+  "changes_per_50": 48.5
+ },
+ "Random|sleep": {
+  "mean": -13.18666666666667,
+  "std": 4.355435939400586,
+  "n": 30,
+  "per_seed": {
+   "0": [
+    -14.910000000000005,
+    5.644900353416354
+   ],
+   "1": [
+    -12.090000000000003,
+    3.0507212262020964
+   ],
+   "2": [
+    -12.560000000000004,
+    3.3425140239047644
+   ]
+  },
+  "type_pct": {
+   "Monitor": 16.1,
+   "Analyse": 16.2,
+   "Remove": 16.8,
+   "Restore": 16.8,
+   "Isolate": 17.4,
+   "Patch": 16.7
+  },
+  "top_actions": [
+   [
+    "Patch DMZ_Server0",
+    42
+   ],
+   [
+    "Isolate Defender",
+    35
+   ],
+   [
+    "Analyse User4",
+    33
+   ],
+   [
+    "Remove User2",
+    33
+   ],
+   [
+    "Patch Research0",
+    33
+   ],
+   [
+    "Remove User6",
+    33
+   ],
+   [
+    "Analyse Enterprise2",
+    33
+   ],
+   [
+    "Remove Enterprise2",
+    33
+   ]
+  ],
+  "changes_per_50": 48.5
+ }
+}
