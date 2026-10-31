@@ -1,0 +1,4 @@
+states=1000  ln(52)=3.951
+entropy nats: mean 3.535  median 3.535  min 3.535  max 3.535
+top1-top2 logit margin: mean 0.065  median 0.065  min 0.065  max 0.065
+argmax-action probability: mean 0.124  median 0.124

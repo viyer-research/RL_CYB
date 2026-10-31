@@ -1,0 +1,87 @@
+Scenario: /mnt/user-data/uploads/RL_CYB/cage-challenge-1/CybORG/CybORG/Shared/Scenarios/Scenario1b-vulnerable.yaml
+Reward: CybORG native Blue reward (sum of result.reward)
+Execution: deterministic, 10 episodes x 100 steps, Red=B_lineAgent, seed=0
+
+=== PPO (Flat): ppo_cyborg_fixedflat_shaped_vulnerable.zip | obs (11293,) | actions Discrete(54) ===
+[PPO (Flat)] Episode 1: Reward=-293.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Episode 2: Reward=-293.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Episode 3: Reward=-291.7, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Episode 4: Reward=-291.7, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Episode 5: Reward=-293.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Episode 6: Reward=-293.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Episode 7: Reward=-291.7, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Episode 8: Reward=-285.7, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Episode 9: Reward=-283.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Episode 10: Reward=-293.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Flat)] Mean Reward: -291.4 (+/- 3.5) | unique/ep 1.0 | total unique 1 | changes/50 0.0 | top-action share 100.0% | types {'Monitor': 0.0, 'Analyse': 0.0, 'Remove': 0.0, 'Restore': 100.0}
+[PPO (Flat)] Top actions: [('Restore Op_Server0', 1000)]
+
+=== LSTM-PPO: lstm_ppo_hierarchical_v1.zip | obs (11293,) | actions Discrete(52) ===
+[LSTM-PPO] Episode 1: Reward=-1080.8, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Episode 2: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Episode 3: Reward=-1140.7, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Episode 4: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Episode 5: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Episode 6: Reward=-1140.7, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Episode 7: Reward=-1140.7, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Episode 8: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Episode 9: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Episode 10: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Analyse Enterprise0', 100)]
+[LSTM-PPO] Mean Reward: -1134.8 (+/- 18.0) | unique/ep 1.0 | total unique 1 | changes/50 0.0 | top-action share 100.0% | types {'Monitor': 0.0, 'Analyse': 100.0, 'Remove': 0.0, 'Restore': 0.0}
+[LSTM-PPO] Top actions: [('Analyse Enterprise0', 1000)]
+
+=== PPO (Hierarchical): ppo_hierarchical_v1.zip | obs (11293,) | actions Discrete(52) ===
+[PPO (Hierarchical)] Episode 1: Reward=-289.6, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Episode 2: Reward=-284.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Episode 3: Reward=-293.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Episode 4: Reward=-293.7, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Episode 5: Reward=-283.7, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Episode 6: Reward=-293.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Episode 7: Reward=-288.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Episode 8: Reward=-291.7, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Episode 9: Reward=-285.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Episode 10: Reward=-288.8, Unique=1, ChangesFirst50=0, Top=[('Restore Op_Server0', 100)]
+[PPO (Hierarchical)] Mean Reward: -289.4 (+/- 3.6) | unique/ep 1.0 | total unique 1 | changes/50 0.0 | top-action share 100.0% | types {'Monitor': 0.0, 'Analyse': 0.0, 'Remove': 0.0, 'Restore': 100.0}
+[PPO (Hierarchical)] Top actions: [('Restore Op_Server0', 1000)]
+
+=== DQN: dqn_hierarchical_v1.zip | obs (11293,) | actions Discrete(52) ===
+[DQN] Episode 1: Reward=-159.8, Unique=6, ChangesFirst50=43, Top=[('Analyse Op_Server0', 55), ('Remove Enterprise1', 17)]
+[DQN] Episode 2: Reward=-242.8, Unique=6, ChangesFirst50=40, Top=[('Analyse Op_Server0', 58), ('Analyse Op_Host0', 16)]
+[DQN] Episode 3: Reward=-152.8, Unique=6, ChangesFirst50=46, Top=[('Analyse Op_Server0', 54), ('Remove Enterprise1', 22)]
+[DQN] Episode 4: Reward=-149.8, Unique=6, ChangesFirst50=42, Top=[('Analyse Op_Server0', 55), ('Remove Enterprise1', 19)]
+[DQN] Episode 5: Reward=-227.7, Unique=6, ChangesFirst50=40, Top=[('Analyse Op_Server0', 57), ('Analyse Op_Host0', 16)]
+[DQN] Episode 6: Reward=-198.7, Unique=6, ChangesFirst50=43, Top=[('Analyse Op_Server0', 56), ('Remove Enterprise1', 13)]
+[DQN] Episode 7: Reward=-248.7, Unique=6, ChangesFirst50=40, Top=[('Analyse Op_Server0', 58), ('Analyse Op_Host0', 17)]
+[DQN] Episode 8: Reward=-220.8, Unique=6, ChangesFirst50=42, Top=[('Analyse Op_Server0', 56), ('Analyse Op_Host0', 15)]
+[DQN] Episode 9: Reward=-224.8, Unique=6, ChangesFirst50=41, Top=[('Analyse Op_Server0', 57), ('Analyse Op_Host0', 15)]
+[DQN] Episode 10: Reward=-152.8, Unique=6, ChangesFirst50=45, Top=[('Analyse Op_Server0', 54), ('Remove Enterprise1', 21)]
+[DQN] Mean Reward: -197.9 (+/- 38.2) | unique/ep 6.0 | total unique 6 | changes/50 42.2 | top-action share 56.0% | types {'Monitor': 2.0, 'Analyse': 72.7, 'Remove': 12.5, 'Restore': 12.8}
+[DQN] Top actions: [('Analyse Op_Server0', 560), ('Analyse Op_Host0', 131), ('Restore Op_Server0', 128), ('Remove Enterprise1', 125), ('Analyse User0', 36), ('Monitor', 20)]
+
+=== PPO (Hierarchical), SAMPLED (deterministic=False): ppo_hierarchical_v1.zip | obs (11293,) | actions Discrete(52) ===
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 1: Reward=-167.7, Unique=25, ChangesFirst50=45, Top=[('Monitor', 23), ('Restore Op_Server0', 15)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 2: Reward=-190.8, Unique=28, ChangesFirst50=46, Top=[('Monitor', 26), ('Restore Op_Server0', 13)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 3: Reward=-164.8, Unique=30, ChangesFirst50=45, Top=[('Monitor', 23), ('Restore Op_Server0', 13)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 4: Reward=-155.8, Unique=24, ChangesFirst50=44, Top=[('Monitor', 21), ('Restore Op_Server0', 12)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 5: Reward=-174.8, Unique=24, ChangesFirst50=46, Top=[('Monitor', 30), ('Restore Op_Server0', 14)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 6: Reward=-136.7, Unique=19, ChangesFirst50=40, Top=[('Monitor', 27), ('Restore Enterprise2', 17)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 7: Reward=-151.0, Unique=27, ChangesFirst50=42, Top=[('Monitor', 20), ('Restore Op_Server0', 18)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 8: Reward=-134.1, Unique=30, ChangesFirst50=47, Top=[('Monitor', 20), ('Restore Op_Server0', 15)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 9: Reward=-176.8, Unique=31, ChangesFirst50=45, Top=[('Monitor', 21), ('Restore Op_Server0', 12)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Episode 10: Reward=-177.8, Unique=29, ChangesFirst50=42, Top=[('Monitor', 25), ('Restore Enterprise2', 9)]
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Mean Reward: -163.0 (+/- 17.5) | unique/ep 26.7 | total unique 40 | changes/50 44.2 | top-action share 23.6% | types {'Monitor': 23.6, 'Analyse': 22.7, 'Remove': 20.5, 'Restore': 33.2}
+[PPO (Hierarchical), SAMPLED (deterministic=False)] Top actions: [('Monitor', 236), ('Restore Op_Server0', 133), ('Restore Enterprise2', 114), ('Analyse User1', 42), ('Restore Enterprise1', 39), ('Analyse User0', 35), ('Remove User0', 32), ('Remove User2', 24)]
+
+=== No defense (Blue Sleep every step): None | no model ===
+[No defense (Blue Sleep every step)] Episode 1: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Episode 2: Reward=-1080.8, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Episode 3: Reward=-1080.8, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Episode 4: Reward=-1020.8, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Episode 5: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Episode 6: Reward=-1127.7, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Episode 7: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Episode 8: Reward=-1140.7, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Episode 9: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Episode 10: Reward=-1140.8, Unique=1, ChangesFirst50=0, Top=[('Sleep', 100)]
+[No defense (Blue Sleep every step)] Mean Reward: -1115.5 (+/- 39.2) | unique/ep 1.0 | total unique 1 | changes/50 0.0 | top-action share 100.0% | types {'Monitor': 0.0, 'Analyse': 0.0, 'Remove': 0.0, 'Restore': 0.0}
+[No defense (Blue Sleep every step)] Top actions: [('Sleep', 1000)]

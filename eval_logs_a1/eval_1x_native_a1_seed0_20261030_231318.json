@@ -1,0 +1,158 @@
+[
+ {
+  "model": "PPO (Flat)",
+  "n_episodes": 10,
+  "steps": 100,
+  "mean": -291.35999999999996,
+  "std": 3.4540411115098584,
+  "per_episode": [
+   -293.8,
+   -293.8,
+   -291.7,
+   -291.7,
+   -293.8,
+   -293.8,
+   -291.7,
+   -285.7,
+   -283.8,
+   -293.8
+  ],
+  "unique_per_ep": 1.0,
+  "total_unique": 1,
+  "changes_per_50": 0.0,
+  "type_pct": {
+   "Monitor": 0.0,
+   "Analyse": 0.0,
+   "Remove": 0.0,
+   "Restore": 100.0
+  },
+  "top_actions": [
+   [
+    "Restore Op_Server0",
+    1000
+   ]
+  ]
+ },
+ {
+  "model": "LSTM-PPO",
+  "n_episodes": 10,
+  "steps": 100,
+  "mean": -1134.7700000000007,
+  "std": 17.990055586350906,
+  "per_episode": [
+   -1080.8,
+   -1140.8,
+   -1140.7,
+   -1140.8,
+   -1140.8,
+   -1140.7,
+   -1140.7,
+   -1140.8,
+   -1140.8,
+   -1140.8
+  ],
+  "unique_per_ep": 1.0,
+  "total_unique": 1,
+  "changes_per_50": 0.0,
+  "type_pct": {
+   "Monitor": 0.0,
+   "Analyse": 100.0,
+   "Remove": 0.0,
+   "Restore": 0.0
+  },
+  "top_actions": [
+   [
+    "Analyse Enterprise0",
+    1000
+   ]
+  ]
+ },
+ {
+  "model": "PPO (Hierarchical) [reference re-run]",
+  "n_episodes": 10,
+  "steps": 100,
+  "mean": -289.4499999999999,
+  "std": 3.6034011711160012,
+  "per_episode": [
+   -289.6,
+   -284.8,
+   -293.8,
+   -293.7,
+   -283.7,
+   -293.8,
+   -288.8,
+   -291.7,
+   -285.8,
+   -288.8
+  ],
+  "unique_per_ep": 1.0,
+  "total_unique": 1,
+  "changes_per_50": 0.0,
+  "type_pct": {
+   "Monitor": 0.0,
+   "Analyse": 0.0,
+   "Remove": 0.0,
+   "Restore": 100.0
+  },
+  "top_actions": [
+   [
+    "Restore Op_Server0",
+    1000
+   ]
+  ]
+ },
+ {
+  "model": "DQN [reference re-run]",
+  "n_episodes": 10,
+  "steps": 100,
+  "mean": -197.86999999999975,
+  "std": 38.16619053560355,
+  "per_episode": [
+   -159.8,
+   -242.8,
+   -152.8,
+   -149.8,
+   -227.7,
+   -198.7,
+   -248.7,
+   -220.8,
+   -224.8,
+   -152.8
+  ],
+  "unique_per_ep": 6.0,
+  "total_unique": 6,
+  "changes_per_50": 42.2,
+  "type_pct": {
+   "Monitor": 2.0,
+   "Analyse": 72.7,
+   "Remove": 12.5,
+   "Restore": 12.8
+  },
+  "top_actions": [
+   [
+    "Analyse Op_Server0",
+    560
+   ],
+   [
+    "Analyse Op_Host0",
+    131
+   ],
+   [
+    "Restore Op_Server0",
+    128
+   ],
+   [
+    "Remove Enterprise1",
+    125
+   ],
+   [
+    "Analyse User0",
+    36
+   ],
+   [
+    "Monitor",
+    20
+   ]
+  ]
+ }
+]
